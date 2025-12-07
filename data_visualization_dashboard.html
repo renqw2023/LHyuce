@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能策略分析数据平台</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(94, 234, 212, 0.1);
+            padding: 1.5rem 2rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #5eead4;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            background: linear-gradient(135deg, #5eead4 0%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header-stats {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: #94a3b8;
+        }
+
+        .stat-value {
+            font-weight: 600;
+            color: #5eead4;
+        }
+
+        /* Main Layout */
+        .container {
+            display: flex;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem 2rem;
+            gap: 2rem;
+        }
+
+        .sidebar {
+            width: 280px;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(94, 234, 212, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            height: fit-content;
+            position: sticky;
+            top: 7rem;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.875rem 1rem;
+            border-radius: 12px;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .menu-item:hover {
+            background: rgba(94, 234, 212, 0.1);
+            color: #5eead4;
+        }
+
+        .menu-item.active {
+            background: linear-gradient(135deg, #0ea5e9 0%, #5eead4 100%);
+            color: #0f172a;
+        }
+
+        .menu-item i {
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Cards */
+        .card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(94, 234, 212, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(94, 234, 212, 0.3);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #f8fafc;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-subtitle {
+            font-size: 0.875rem;
+            color: #94a3b8;
+            margin-top: 0.25rem;
+        }
+
+        /* Metrics Grid */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(94, 234, 212, 0.1) 100%);
+            border: 1px solid rgba(94, 234, 212, 0.2);
+            border-radius: 16px;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #0ea5e9 0%, #5eead4 100%);
+        }
+
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #5eead4;
+            margin: 0.5rem 0;
+        }
+
+        .metric-label {
+            font-size: 0.875rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .metric-change {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.875rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            margin-top: 0.5rem;
+        }
+
+        .metric-change.positive {
+            background: rgba(72, 187, 120, 0.1);
+            color: #48bb78;
+        }
+
+        .metric-change.negative {
+            background: rgba(245, 101, 101, 0.1);
+            color: #f56565;
+        }
+
+        /* Analysis Results */
+        .analysis-section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #f8fafc;
+        }
+
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .result-item {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(94, 234, 212, 0.2);
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .result-item:hover {
+            transform: translateY(-3px);
+            border-color: #5eead4;
+            box-shadow: 0 5px 15px rgba(94, 234, 212, 0.2);
+        }
+
+        .number-pill {
+            display: inline-block;
+            background: linear-gradient(135deg, #0ea5e9 0%, #5eead4 100%);
+            color: #0f172a;
+            font-weight: 700;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin: 0.25rem;
+            font-size: 1.125rem;
+        }
+
+        .combo-display {
+            background: rgba(30, 41, 59, 0.8);
+            border: 2px solid rgba(94, 234, 212, 0.3);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 0.75rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .combo-paren {
+            font-size: 2rem;
+            color: #5eead4;
+            font-weight: 300;
+        }
+
+        /* Charts */
+        .chart-container {
+            height: 400px;
+            position: relative;
+            background: rgba(15, 23, 42, 0.4);
+            border-radius: 12px;
+            padding: 1rem;
+        }
+
+        /* Buttons */
+        .btn {
+            background: linear-gradient(135deg, #0ea5e9 0%, #5eead4 100%);
+            color: #0f172a;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(94, 234, 212, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(30, 41, 59, 0.8);
+            color: #e2e8f0;
+            border: 1px solid rgba(94, 234, 212, 0.3);
+        }
+
+        /* Status Indicators */
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .status-active {
+            background: rgba(72, 187, 120, 0.1);
+            color: #48bb78;
+        }
+
+        .status-active::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #48bb78;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+                padding-top: 8rem;
+            }
+
+            .sidebar {
+                width: 100%;
+                position: relative;
+                top: 0;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-stats {
+                display: none;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(30, 41, 59, 0.8);
+            border-top: 3px solid #5eead4;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-chart-line"></i>
+                <span>智能策略分析平台</span>
+            </div>
+            <div class="header-stats">
+                <div class="stat-item">
+                    <i class="fas fa-database"></i>
+                    <span>数据更新: <span class="stat-value" id="dataUpdateTime">刚刚</span></span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-brain"></i>
+                    <span>AI得分: <span class="stat-value" id="aiScore">--</span></span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-history"></i>
+                    <span>回测期: <span class="stat-value" id="backtestPeriod">--</span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav>
+                <div class="menu-item active" data-tab="overview">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>总览看板</span>
+                </div>
+                <div class="menu-item" data-tab="macau">
+                    <i class="fas fa-flag"></i>
+                    <span>澳门分析</span>
+                </div>
+                <div class="menu-item" data-tab="hk">
+                    <i class="fas fa-flag"></i>
+                    <span>香港分析</span>
+                </div>
+                <div class="menu-item" data-tab="strategy">
+                    <i class="fas fa-cogs"></i>
+                    <span>策略优化</span>
+                </div>
+                <div class="menu-item" data-tab="execution">
+                    <i class="fas fa-play-circle"></i>
+                    <span>执行中心</span>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Overview Tab -->
+            <div class="tab-content active" id="overview">
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-label">澳门 AI 策略得分</div>
+                        <div class="metric-value" id="macauScore">--</div>
+                        <div class="metric-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>已优化</span>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">香港 AI 策略得分</div>
+                        <div class="metric-value" id="hkScore">--</div>
+                        <div class="metric-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>已优化</span>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">数据覆盖期数</div>
+                        <div class="metric-value" id="totalPeriods">--</div>
+                        <div class="metric-label" style="margin-top: 0.5rem;">澳门 + 香港</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">
+                                <i class="fas fa-chart-area"></i>
+                                AI 策略学习曲线
+                            </div>
+                            <div class="card-subtitle">遗传算法优化过程中的适应度变化</div>
+                        </div>
+                        <div class="status-indicator status-active">
+                            <i class="fas fa-circle" style="font-size: 0.5rem;"></i>
+                            实时监控
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="learningChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Macau Tab -->
+            <div class="tab-content" id="macau">
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-label">最终策略得分</div>
+                        <div class="metric-value" id="macauFinalScore">--</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">最佳回顾期</div>
+                        <div class="metric-value" id="macauLookback">--</div>
+                        <div class="metric-label" style="margin-top: 0.5rem;">历史期数</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">数据总量</div>
+                        <div class="metric-value" id="macauTotalData">--</div>
+                    </div>
+                </div>
+
+                <div class="analysis-section">
+                    <h3 class="section-title">热门号码分析</h3>
+                    <div class="card">
+                        <div id="macauHotNumbers" class="result-grid"></div>
+                    </div>
+                </div>
+
+                <div class="analysis-section">
+                    <h3 class="section-title">热门生肖</h3>
+                    <div class="card">
+                        <div id="macauHotZodiacs" class="result-grid"></div>
+                    </div>
+                </div>
+
+                <div class="analysis-section">
+                    <h3 class="section-title">2中2 组合预测</h3>
+                    <div id="macauCombo2"></div>
+                </div>
+
+                <div class="analysis-section">
+                    <h3 class="section-title">3中3 组合预测</h3>
+                    <div id="macauCombo3"></div>
+                </div>
+            </div>
+
+            <!-- HK Tab -->
+            <div class="tab-content" id="hk">
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-label">最终策略得分</div>
+                        <div class="metric-value" id="hkFinalScore">--</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">最佳回顾期</div>
+                        <div class="metric-value" id="hkLookback">--</div>
+                        <div class="metric-label" style="margin-top: 0.5rem;">历史期数</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">数据总量</div>
+                        <div class="metric-value" id="hkTotalData">--</div>
+                    </div>
+                </div>
+
+                <div class="analysis-section">
+                    <h3 class="section-title">热门号码分析</h3>
+                    <div class="card">
+                        <div id="hkHotNumbers" class="result-grid"></div>
+                    </div>
+                </div>
+
+                <div class="analysis-section">
+                    <h3 class="section-title">热门生肖</h3>
+                    <div class="card">
+                        <div id="hkHotZodiacs" class="result-grid"></div>
+                    </div>
+                </div>
+
+                <div class="analysis-section">
+                    <h3 class="section-title">2中2 组合预测</h3>
+                    <div id="hkCombo2"></div>
+                </div>
+
+                <div class="analysis-section">
+                    <h3 class="section-title">3中3 组合预测</h3>
+                    <div id="hkCombo3"></div>
+                </div>
+            </div>
+
+            <!-- Strategy Tab -->
+            <div class="tab-content" id="strategy">
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">
+                                <i class="fas fa-sliders-h"></i>
+                                策略参数对比
+                            </div>
+                            <div class="card-subtitle">澳门 vs 香港 AI 策略参数差异</div>
+                        </div>
+                        <button class="btn" onclick="loadStrategyData()">
+                            <i class="fas fa-sync-alt"></i>
+                            刷新数据
+                        </button>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="strategyChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-card" id="macauStrategyCard">
+                        <div class="card-title" style="font-size: 1rem; margin-bottom: 1rem;">
+                            <i class="fas fa-flag"></i> 澳门策略详情
+                        </div>
+                        <div id="macauStrategyDetails"></div>
+                    </div>
+                    <div class="metric-card" id="hkStrategyCard">
+                        <div class="card-title" style="font-size: 1rem; margin-bottom: 1rem;">
+                            <i class="fas fa-flag"></i> 香港策略详情
+                        </div>
+                        <div id="hkStrategyDetails"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Execution Tab -->
+            <div class="tab-content" id="execution">
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">
+                                <i class="fas fa-play-circle"></i>
+                                执行控制中心
+                            </div>
+                            <div class="card-subtitle">运行数据获取、AI分析和策略优化任务</div>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                        <div class="card" style="margin: 0;">
+                            <h4 style="margin-bottom: 1rem; color: #f8fafc;">
+                                <i class="fas fa-calendar-day"></i> 日常分析
+                            </h4>
+                            <p style="color: #94a3b8; margin-bottom: 1.5rem; font-size: 0.875rem;">
+                                获取最新数据并生成分析报告
+                            </p>
+                            <button class="btn" onclick="executeTask('dailyAnalysis')" style="width: 100%;">
+                                <i class="fas fa-rocket"></i>
+                                运行每日分析
+                            </button>
+                            <div id="dailyAnalysisStatus" style="margin-top: 1rem;"></div>
+                        </div>
+
+                        <div class="card" style="margin: 0;">
+                            <h4 style="margin-bottom: 1rem; color: #f8fafc;">
+                                <i class="fas fa-brain"></i> AI 策略优化
+                            </h4>
+                            <p style="color: #94a3b8; margin-bottom: 1.5rem; font-size: 0.875rem;">
+                                启动遗传算法优化新策略
+                            </p>
+                            <button class="btn btn-secondary" onclick="executeTask('strategyOptimize')" style="width: 100%;">
+                                <i class="fas fa-cogs"></i>
+                                运行策略优化
+                            </button>
+                            <div id="strategyOptimizeStatus" style="margin-top: 1rem;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <i class="fas fa-history"></i>
+                            执行日志
+                        </div>
+                    </div>
+                    <div id="executionLog" style="max-height: 400px; overflow-y: auto; font-family: monospace; font-size: 0.875rem; line-height: 1.5; color: #94a3b8;">
+                        <div style="padding: 1rem; border-bottom: 1px solid rgba(94, 234, 212, 0.1);">
+                            <span style="color: #5eead4;">[系统]</span> 等待执行任务...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

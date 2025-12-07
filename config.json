@@ -1,0 +1,32 @@
+{
+  "data_files": {
+    "hk": "HK2025_lottery_data_complete.json",
+    "macau": "lottery_data_2025_complete.json"
+  },
+  "analysis_results": {
+    "hk": "hk_analysis_results.json",
+    "macau": "macau_analysis_results.json"
+  },
+  "prediction_history": {
+    "hk": "hk_prediction_history.json",
+    "macau": "macau_prediction_history.json"
+  },
+  "prediction_outputs": {
+    "hk_prefix": "predictions/hk_prediction_for_",
+    "macau_prefix": "predictions/macau_prediction_for_"
+  },
+  "reporting": {
+    "analysis_report_template": "analysis_report_{}.md"
+  },
+  "logging": {
+    "bug_log": "bug.txt",
+    "review_log": "review_log.json"
+  },
+  "optimizer": {
+    "default_settings": "optimizer_settings.json",
+    "results_path": "optimizer_results.json"
+  },
+  "backtester": {
+    "results_path": "backtest_results.json"
+  }
+}

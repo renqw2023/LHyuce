@@ -1,0 +1,10 @@
+{
+  "trend_lookback": 8.619845308886244,
+  "hot_score": 0.6764482689505613,
+  "cold_score": 1.7841577854797739,
+  "category_trend": 0.5258988342454451,
+  "combo_2_diversity": 1.3644636384317321,
+  "combo_3_color_diversity": 1.1658580740103244,
+  "combo_3_element_diversity": 1.0701012193988397,
+  "co_occurrence_weight": 3.5253862895963177
+}

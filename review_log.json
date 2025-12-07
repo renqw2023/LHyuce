@@ -1,0 +1,1611 @@
+[
+  {
+    "lottery_type": "macau",
+    "period": 338,
+    "review_time": "2025-12-05T02:45:39.838931",
+    "actual_general_numbers": [
+      10,
+      15,
+      25,
+      34,
+      41,
+      48
+    ],
+    "actual_general_zodiacs": [
+      "兔",
+      "牛",
+      "猴",
+      "蛇",
+      "马"
+    ],
+    "actual_special_number": 8,
+    "actual_special_zodiac": "狗",
+    "general_prediction_review": {
+      "predicted_hot_numbers": [
+        18,
+        25,
+        39,
+        40,
+        16,
+        48,
+        12,
+        7,
+        4,
+        38
+      ],
+      "predicted_combos_3": [
+        [
+          18,
+          25,
+          16
+        ],
+        [
+          18,
+          25,
+          39
+        ],
+        [
+          18,
+          25,
+          38
+        ],
+        [
+          18,
+          25,
+          5
+        ],
+        [
+          25,
+          39,
+          7
+        ]
+      ],
+      "predicted_zodiacs": [
+        "蛇",
+        "虎",
+        "鼠",
+        "马",
+        "羊"
+      ],
+      "hits": {
+        "hot_numbers": 2,
+        "combo_2_in_2": 0,
+        "combo_3_in_3": 0,
+        "zodiacs": 2
+      }
+    },
+    "special_prediction_review": {
+      "predicted_special_zodiacs": [
+        "羊",
+        "牛",
+        "鼠",
+        "虎"
+      ],
+      "hits": {
+        "special_zodiacs": 0
+      }
+    }
+  },
+  {
+    "lottery_type": "macau",
+    "period": 337,
+    "review_time": "2025-12-04T16:46:44.725630",
+    "actual_general_numbers": [
+      13,
+      14,
+      24,
+      32,
+      42,
+      44
+    ],
+    "actual_general_zodiacs": [
+      "狗",
+      "蛇",
+      "马",
+      "鼠",
+      "龙"
+    ],
+    "actual_special_number": 9,
+    "actual_special_zodiac": "鸡",
+    "general_prediction_review": {
+      "predicted_hot_numbers": [
+        18,
+        39,
+        25,
+        14,
+        7,
+        40,
+        16,
+        9,
+        12,
+        5
+      ],
+      "predicted_combos_3": [
+        [
+          39,
+          25,
+          7
+        ],
+        [
+          39,
+          14,
+          7
+        ],
+        [
+          18,
+          25,
+          16
+        ],
+        [
+          18,
+          14,
+          16
+        ],
+        [
+          18,
+          25,
+          5
+        ]
+      ],
+      "predicted_zodiacs": [
+        "蛇",
+        "虎",
+        "马",
+        "鸡",
+        "鼠"
+      ],
+      "hits": {
+        "hot_numbers": 2,
+        "combo_2_in_2": 0,
+        "combo_3_in_3": 0,
+        "zodiacs": 3
+      }
+    },
+    "special_prediction_review": {
+      "predicted_special_zodiacs": [
+        "羊",
+        "鸡",
+        "鼠",
+        "虎"
+      ],
+      "hits": {
+        "special_zodiacs": 1
+      }
+    }
+  },
+  {
+    "lottery_type": "macau",
+    "period": 336,
+    "review_time": "2025-12-03T02:49:02.787239",
+    "actual_general_numbers": [
+      6,
+      10,
+      13,
+      15,
+      20,
+      42
+    ],
+    "actual_general_zodiacs": [
+      "兔",
+      "狗",
+      "猴",
+      "蛇",
+      "鼠"
+    ],
+    "actual_special_number": 17,
+    "actual_special_zodiac": "牛",
+    "general_prediction_review": {
+      "predicted_hot_numbers": [
+        39,
+        25,
+        18,
+        14,
+        7,
+        12,
+        40,
+        16,
+        9,
+        45
+      ],
+      "predicted_combos_3": [
+        [
+          39,
+          25,
+          7
+        ],
+        [
+          39,
+          14,
+          7
+        ],
+        [
+          39,
+          25,
+          45
+        ],
+        [
+          39,
+          25,
+          23
+        ],
+        [
+          25,
+          18,
+          16
+        ]
+      ],
+      "predicted_zodiacs": [
+        "蛇",
+        "虎",
+        "鸡",
+        "马",
+        "羊"
+      ],
+      "hits": {
+        "hot_numbers": 0,
+        "combo_2_in_2": 0,
+        "combo_3_in_3": 0,
+        "zodiacs": 1
+      }
+    },
+    "special_prediction_review": {
+      "predicted_special_zodiacs": [
+        "羊",
+        "龙",
+        "鼠",
+        "虎"
+      ],
+      "hits": {
+        "special_zodiacs": 0
+      }
+    }
+  },
+  {
+    "lottery_type": "hk",
+    "period": 126,
+    "review_time": "2025-12-03T02:49:02.465723",
+    "actual_general_numbers": [
+      6,
+      18,
+      29,
+      34,
+      37,
+      38
+    ],
+    "actual_general_zodiacs": [
+      "牛",
+      "猴",
+      "蛇",
+      "鼠",
+      "龙"
+    ],
+    "actual_special_number": 39,
+    "actual_special_zodiac": "兔",
+    "general_prediction_review": {
+      "predicted_hot_numbers": [
+        29,
+        32,
+        17,
+        39,
+        24,
+        18,
+        34,
+        2,
+        7,
+        45
+      ],
+      "predicted_combos_3": [
+        [
+          29,
+          32,
+          31
+        ],
+        [
+          29,
+          17,
+          31
+        ],
+        [
+          29,
+          39,
+          31
+        ],
+        [
+          29,
+          27,
+          31
+        ],
+        [
+          32,
+          24,
+          31
+        ]
+      ],
+      "predicted_zodiacs": [
+        "蛇",
+        "牛",
+        "兔",
+        "猪",
+        "猴"
+      ],
+      "hits": {
+        "hot_numbers": 4,
+        "combo_2_in_2": 0,
+        "combo_3_in_3": 0,
+        "zodiacs": 3
+      }
+    },
+    "special_prediction_review": {
+      "predicted_special_zodiacs": [
+        "狗",
+        "猪",
+        "龙",
+        "蛇"
+      ],
+      "hits": {
+        "special_zodiacs": 0
+      }
+    }
+  },
+  {
+    "lottery_type": "macau",
+    "period": 335,
+    "review_time": "2025-12-02T16:05:46.205132",
+    "actual_general_numbers": [
+      3,
+      13,
+      31,
+      34,
+      35,
+      46
+    ],
+    "actual_general_zodiacs": [
+      "兔",
+      "猪",
+      "猴",
+      "羊",
+      "蛇"
+    ],
+    "actual_special_number": 44,
+    "actual_special_zodiac": "狗",
+    "general_prediction_review": {
+      "predicted_hot_numbers": [
+        39,
+        25,
+        14,
+        18,
+        7,
+        12,
+        13,
+        9,
+        23,
+        5
+      ],
+      "predicted_combos_3": [
+        [
+          39,
+          25,
+          7
+        ],
+        [
+          39,
+          14,
+          7
+        ],
+        [
+          39,
+          25,
+          13
+        ],
+        [
+          39,
+          25,
+          23
+        ],
+        [
+          39,
+          14,
+          12
+        ]
+      ],
+      "predicted_zodiacs": [
+        "蛇",
+        "兔",
+        "羊",
+        "马",
+        "鸡"
+      ],
+      "hits": {
+        "hot_numbers": 1,
+        "combo_2_in_2": 0,
+        "combo_3_in_3": 0,
+        "zodiacs": 3
+      }
+    },
+    "special_prediction_review": {
+      "predicted_special_zodiacs": [
+        "虎",
+        "龙",
+        "鼠",
+        "狗"
+      ],
+      "hits": {
+        "special_zodiacs": 1
+      }
+    }
+  },
+  {
+    "lottery_type": "macau",
+    "period": 334,
+    "review_time": "2025-12-01T15:59:38.018610",
+    "actual_general_numbers": [
+      1,
+      29,
+      33,
+      35,
+      41,
+      49
+    ],
+    "actual_general_zodiacs": [
+      "牛",
+      "羊",
+      "蛇",
+      "鸡"
+    ],
+    "actual_special_number": 46,
+    "actual_special_zodiac": "猴",
+    "general_prediction_review": {
+      "predicted_hot_numbers": [
+        41,
+        35,
+        39,
+        25,
+        18,
+        29,
+        49,
+        9,
+        14,
+        10
+      ],
+      "predicted_combos_3": [
+        [
+          35,
+          39,
+          25
+        ],
+        [
+          41,
+          39,
+          29
+        ],
+        [
+          41,
+          35,
+          16
+        ],
+        [
+          41,
+          39,
+          7
+        ],
+        [
+          41,
+          18,
+          49
+        ]
+      ],
+      "predicted_zodiacs": [
+        "蛇",
+        "牛",
+        "羊",
+        "鸡",
+        "猴"
+      ],
+      "hits": {
+        "hot_numbers": 4,
+        "combo_2_in_2": 0,
+        "combo_3_in_3": 0,
+        "zodiacs": 4
+      }
+    },
+    "special_prediction_review": {
+      "predicted_special_zodiacs": [
+        "龙",
+        "鼠",
+        "虎",
+        "猴"
+      ],
+      "hits": {
+        "special_zodiacs": 1
+      }
+    }
+  },
+  {
+    "lottery_type": "macau",
+    "period": 333,
+    "review_time": "2025-11-30T15:25:49.232786",
+    "actual_general_numbers": [
+      11,
+      27,
+      31,
+      36,
+      37,
+      43
+    ],
+    "actual_general_zodiacs": [
+      "兔",
+      "猪",
+      "羊",
+      "蛇",
+      "马"
+    ],
+    "actual_special_number": 6,
+    "actual_special_zodiac": "鼠",
+    "general_prediction_review": {
+      "predicted_hot_numbers": [
+        41,
+        35,
+        27,
+        18,
+        14,
+        16,
+        40,
+        39,
+        25,
+        43
+      ],
+      "predicted_combos_3": [
+        [
+          41,
+          27,
+          18
+        ],
+        [
+          41,
+          35,
+          16
+        ],
+        [
+          41,
+          27,
+          40
+        ],
+        [
+          41,
+          18,
+          16
+        ],
+        [
+          41,
+          18,
+          43
+        ]
+      ],
+      "predicted_zodiacs": [
+        "蛇",
+        "虎",
+        "牛",
+        "羊",
+        "鼠"
+      ],
+      "hits": {
+        "hot_numbers": 2,
+        "combo_2_in_2": 0,
+        "combo_3_in_3": 0,
+        "zodiacs": 2
+      }
+    },
+    "special_prediction_review": {
+      "predicted_special_zodiacs": [
+        "猴",
+        "虎",
+        "龙",
+        "羊"
+      ],
+      "hits": {
+        "special_zodiacs": 0
+      }
+    }
+  },
+  {
+    "lottery_type": "macau",
+    "period": 332,
+    "review_time": "2025-11-29T17:38:34.197093",
+    "actual_general_numbers": [
+      8,
+      19,
+      23,
+      30,
+      44,
+      45
+    ],
+    "actual_general_zodiacs": [
+      "狗",
+      "猪",
+      "羊",
+      "鸡",
+      "鼠"
+    ],
+    "actual_special_number": 26,
+    "actual_special_zodiac": "龙",
+    "general_prediction_review": {
+      "predicted_hot_numbers": [
+        41,
+        27,
+        35,
+        39,
+        14,
+        43,
+        18,
+        25,
+        16,
+        7
+      ],
+      "predicted_combos_3": [
+        [
+          41,
+          27,
+          18
+        ],
+        [
+          41,
+          27,
+          7
+        ],
+        [
+          41,
+          27,
+          40
+        ],
+        [
+          41,
+          27,
+          23
+        ],
+        [
+          41,
+          27,
+          29
+        ]
+      ],
+      "predicted_zodiacs": [
+        "蛇",
+        "兔",
+        "牛",
+        "羊",
+        "猪"
+      ],
+      "hits": {
+        "hot_numbers": 0,
+        "combo_2_in_2": 0,
+        "combo_3_in_3": 0,
+        "zodiacs": 2
+      }
+    },
+    "special_prediction_review": {
+      "predicted_special_zodiacs": [
+        "鼠",
+        "虎",
+        "龙",
+        "羊"
+      ],
+      "hits": {
+        "special_zodiacs": 1
+      }
+    }
+  },
+  {
+    "lottery_type": "macau",
+    "period": 331,
+    "review_time": "2025-11-28T16:03:45.770248",
+    "actual_general_numbers": [
+      2,
+      21,
+      22,
+      24,
+      42,
+      47
+    ],
+    "actual_general_zodiacs": [
+      "猴",
+      "羊",
+      "马",
+      "鸡",
+      "鼠",
+      "龙"
+    ],
+    "actual_special_number": 26,
+    "actual_special_zodiac": "龙",
+    "general_prediction_review": {
+      "predicted_hot_numbers": [
+        41,
+        35,
+        27,
+        43,
+        39,
+        25,
+        47,
+        14,
+        21,
+        18
+      ],
+      "predicted_combos_3": [
+        [
+          41,
+          35,
+          21
+        ],
+        [
+          41,
+          27,
+          18
+        ],
+        [
+          41,
+          35,
+          16
+        ],
+        [
+          41,
+          27,
+          23
+        ],
+        [
+          41,
+          27,
+          7
+        ]
+      ],
+      "predicted_zodiacs": [
+        "蛇",
+        "羊",
+        "鸡",
+        "兔",
+        "牛"
+      ],
+      "hits": {
+        "hot_numbers": 2,
+        "combo_2_in_2": 0,
+        "combo_3_in_3": 0,
+        "zodiacs": 2
+      }
+    },
+    "special_prediction_review": {
+      "predicted_special_zodiacs": [
+        "猴",
+        "虎",
+        "羊",
+        "龙"
+      ],
+      "hits": {
+        "special_zodiacs": 1
+      }
+    }
+  },
+  {
+    "lottery_type": "macau",
+    "period": 330,
+    "review_time": "2025-11-27T15:34:36.880797",
+    "actual_general_numbers": [
+      1,
+      6,
+      11,
+      20,
+      32,
+      37
+    ],
+    "actual_general_zodiacs": [
+      "狗",
+      "羊",
+      "蛇",
+      "鼠"
+    ],
+    "actual_special_number": 36,
+    "actual_special_zodiac": "马",
+    "general_prediction_review": {
+      "predicted_hot_numbers": [
+        41,
+        27,
+        35,
+        43,
+        1,
+        39,
+        7,
+        25,
+        32,
+        21
+      ],
+      "predicted_combos_3": [
+        [
+          41,
+          27,
+          1
+        ],
+        [
+          41,
+          27,
+          7
+        ],
+        [
+          41,
+          43,
+          1
+        ],
+        [
+          41,
+          27,
+          23
+        ],
+        [
+          41,
+          35,
+          32
+        ]
+      ],
+      "predicted_zodiacs": [
+        "蛇",
+        "羊",
+        "兔",
+        "鸡",
+        "猪"
+      ],
+      "hits": {
+        "hot_numbers": 2,
+        "combo_2_in_2": 0,
+        "combo_3_in_3": 0,
+        "zodiacs": 2
+      }
+    },
+    "special_prediction_review": {
+      "predicted_special_zodiacs": [
+        "猴",
+        "虎",
+        "羊",
+        "龙"
+      ],
+      "hits": {
+        "special_zodiacs": 0
+      }
+    }
+  },
+  {
+    "lottery_type": "macau",
+    "period": 329,
+    "review_time": "2025-11-26T16:10:21.885688",
+    "actual_general_numbers": [
+      13,
+      19,
+      37,
+      44,
+      45,
+      46
+    ],
+    "actual_general_zodiacs": [
+      "狗",
+      "猪",
+      "猴",
+      "蛇",
+      "鸡"
+    ],
+    "actual_special_number": 17,
+    "actual_special_zodiac": "牛",
+    "general_prediction_review": {
+      "predicted_hot_numbers": [
+        41,
+        27,
+        35,
+        39,
+        43,
+        1,
+        45,
+        14,
+        32,
+        25
+      ],
+      "predicted_combos_3": [
+        [
+          41,
+          27,
+          1
+        ],
+        [
+          41,
+          27,
+          7
+        ],
+        [
+          41,
+          27,
+          18
+        ],
+        [
+          41,
+          35,
+          32
+        ],
+        [
+          41,
+          27,
+          35
+        ]
+      ],
+      "predicted_zodiacs": [
+        "蛇",
+        "兔",
+        "羊",
+        "牛",
+        "鸡"
+      ],
+      "hits": {
+        "hot_numbers": 1,
+        "combo_2_in_2": 0,
+        "combo_3_in_3": 0,
+        "zodiacs": 2
+      }
+    },
+    "special_prediction_review": {
+      "predicted_special_zodiacs": [
+        "虎",
+        "鼠",
+        "羊",
+        "猴"
+      ],
+      "hits": {
+        "special_zodiacs": 0
+      }
+    }
+  },
+  {
+    "lottery_type": "hk",
+    "period": 125,
+    "review_time": "2025-11-26T16:10:21.377661",
+    "actual_general_numbers": [
+      1,
+      2,
+      17,
+      35,
+      37,
+      48
+    ],
+    "actual_general_zodiacs": [
+      "牛",
+      "羊",
+      "蛇",
+      "马",
+      "龙"
+    ],
+    "actual_special_number": 8,
+    "actual_special_zodiac": "狗",
+    "general_prediction_review": {
+      "predicted_hot_numbers": [
+        29,
+        32,
+        42,
+        34,
+        45,
+        24,
+        21,
+        14,
+        44,
+        48
+      ],
+      "predicted_combos_3": [
+        [
+          29,
+          32,
+          42
+        ],
+        [
+          29,
+          32,
+          25
+        ],
+        [
+          29,
+          32,
+          3
+        ],
+        [
+          29,
+          42,
+          6
+        ],
+        [
+          29,
+          42,
+          27
+        ]
+      ],
+      "predicted_zodiacs": [
+        "狗",
+        "蛇",
+        "牛",
+        "马",
+        "鼠"
+      ],
+      "hits": {
+        "hot_numbers": 1,
+        "combo_2_in_2": 0,
+        "combo_3_in_3": 0,
+        "zodiacs": 3
+      }
+    },
+    "special_prediction_review": {
+      "predicted_special_zodiacs": [
+        "猪",
+        "蛇",
+        "狗",
+        "牛"
+      ],
+      "hits": {
+        "special_zodiacs": 1
+      }
+    }
+  },
+  {
+    "lottery_type": "macau",
+    "period": 328,
+    "review_time": "2025-11-25T08:57:49.137898",
+    "actual_general_numbers": [
+      8,
+      13,
+      15,
+      22,
+      28,
+      34
+    ],
+    "actual_general_zodiacs": [
+      "兔",
+      "狗",
+      "猴",
+      "虎",
+      "蛇"
+    ],
+    "actual_special_number": 3,
+    "actual_special_zodiac": "兔",
+    "general_prediction_review": {
+      "predicted_hot_numbers": [
+        27,
+        41,
+        39,
+        25,
+        43,
+        1,
+        35,
+        45,
+        3,
+        11
+      ],
+      "predicted_combos_3": [
+        [
+          27,
+          41,
+          1
+        ],
+        [
+          27,
+          25,
+          1
+        ],
+        [
+          41,
+          43,
+          1
+        ],
+        [
+          27,
+          41,
+          18
+        ],
+        [
+          27,
+          25,
+          45
+        ]
+      ],
+      "predicted_zodiacs": [
+        "蛇",
+        "兔",
+        "羊",
+        "牛",
+        "鸡"
+      ],
+      "hits": {
+        "hot_numbers": 0,
+        "combo_2_in_2": 0,
+        "combo_3_in_3": 0,
+        "zodiacs": 2
+      }
+    },
+    "special_prediction_review": {
+      "predicted_special_zodiacs": [
+        "猴",
+        "虎",
+        "鼠",
+        "羊"
+      ],
+      "hits": {
+        "special_zodiacs": 0
+      }
+    }
+  },
+  {
+    "lottery_type": "macau",
+    "period": 327,
+    "review_time": "2025-11-24T19:10:32.608042",
+    "actual_general_numbers": [
+      9,
+      13,
+      21,
+      22,
+      31,
+      44
+    ],
+    "actual_general_zodiacs": [
+      "狗",
+      "猪",
+      "猴",
+      "蛇",
+      "鸡"
+    ],
+    "actual_special_number": 37,
+    "actual_special_zodiac": "蛇",
+    "general_prediction_review": {
+      "predicted_hot_numbers": [
+        41,
+        27,
+        39,
+        35,
+        14,
+        13,
+        43,
+        42,
+        18,
+        32
+      ],
+      "predicted_combos_3": [
+        [
+          41,
+          27,
+          13
+        ],
+        [
+          41,
+          27,
+          18
+        ],
+        [
+          41,
+          27,
+          1
+        ],
+        [
+          41,
+          27,
+          7
+        ],
+        [
+          41,
+          39,
+          35
+        ]
+      ],
+      "predicted_zodiacs": [
+        "蛇",
+        "牛",
+        "兔",
+        "狗",
+        "龙"
+      ],
+      "hits": {
+        "hot_numbers": 1,
+        "combo_2_in_2": 0,
+        "combo_3_in_3": 0,
+        "zodiacs": 2
+      }
+    },
+    "special_prediction_review": {
+      "predicted_special_zodiacs": [
+        "龙",
+        "虎",
+        "蛇"
+      ],
+      "hits": {
+        "special_zodiacs": 1
+      }
+    }
+  },
+  {
+    "lottery_type": "macau",
+    "period": 326,
+    "review_time": "2025-11-23T02:22:46.258204",
+    "actual_general_numbers": [
+      4,
+      11,
+      23,
+      31,
+      33,
+      46
+    ],
+    "actual_general_zodiacs": [
+      "猪",
+      "猴",
+      "羊",
+      "虎",
+      "鸡"
+    ],
+    "actual_special_number": 19,
+    "actual_special_zodiac": "猪",
+    "general_prediction_review": {
+      "predicted_hot_numbers": [
+        41,
+        27,
+        11,
+        14,
+        18,
+        32,
+        44,
+        22,
+        42,
+        39
+      ],
+      "predicted_combos_3": [
+        [
+          41,
+          27,
+          18
+        ],
+        [
+          41,
+          27,
+          40
+        ],
+        [
+          41,
+          18,
+          44
+        ],
+        [
+          41,
+          18,
+          22
+        ],
+        [
+          41,
+          18,
+          43
+        ]
+      ],
+      "predicted_zodiacs": [
+        "牛",
+        "蛇",
+        "狗",
+        "鼠",
+        "猴"
+      ],
+      "hits": {
+        "hot_numbers": 1,
+        "combo_2_in_2": 0,
+        "combo_3_in_3": 0,
+        "zodiacs": 1
+      }
+    },
+    "special_prediction_review": {
+      "predicted_special_zodiacs": [
+        "虎",
+        "牛",
+        "蛇"
+      ],
+      "hits": {
+        "special_zodiacs": 0
+      }
+    }
+  },
+  {
+    "lottery_type": "macau",
+    "period": 325,
+    "review_time": "2025-11-22T02:26:06.683311",
+    "actual_general_numbers": [
+      2,
+      5,
+      12,
+      17,
+      33,
+      49
+    ],
+    "actual_general_zodiacs": [
+      "牛",
+      "蛇",
+      "马",
+      "鸡",
+      "龙"
+    ],
+    "actual_special_number": 4,
+    "actual_special_zodiac": "虎",
+    "general_prediction_review": {
+      "predicted_hot_numbers": [
+        41,
+        12,
+        2,
+        18,
+        44,
+        27,
+        32,
+        14,
+        5,
+        42
+      ],
+      "predicted_combos_3": [
+        [
+          41,
+          2,
+          44
+        ],
+        [
+          41,
+          2,
+          27
+        ],
+        [
+          41,
+          2,
+          5
+        ],
+        [
+          41,
+          2,
+          22
+        ],
+        [
+          41,
+          18,
+          44
+        ]
+      ],
+      "predicted_zodiacs": [
+        "牛",
+        "狗",
+        "蛇",
+        "马",
+        "猴"
+      ],
+      "hits": {
+        "hot_numbers": 3,
+        "combo_2_in_2": 0,
+        "combo_3_in_3": 0,
+        "zodiacs": 3
+      }
+    },
+    "special_prediction_review": {
+      "predicted_special_zodiacs": [
+        "鼠",
+        "牛",
+        "蛇"
+      ],
+      "hits": {
+        "special_zodiacs": 0
+      }
+    }
+  },
+  {
+    "lottery_type": "macau",
+    "period": 324,
+    "review_time": "2025-11-21T03:09:24.329421",
+    "actual_general_numbers": [
+      10,
+      28,
+      30,
+      31,
+      38,
+      49
+    ],
+    "actual_general_zodiacs": [
+      "猪",
+      "猴",
+      "虎",
+      "蛇",
+      "鼠",
+      "龙"
+    ],
+    "actual_special_number": 15,
+    "actual_special_zodiac": "兔",
+    "general_prediction_review": {
+      "predicted_hot_numbers": [
+        12,
+        41,
+        18,
+        10,
+        34,
+        46,
+        8,
+        42,
+        20,
+        44
+      ],
+      "predicted_combos_3": [
+        [
+          12,
+          10,
+          44
+        ],
+        [
+          12,
+          41,
+          44
+        ],
+        [
+          12,
+          41,
+          32
+        ],
+        [
+          12,
+          10,
+          22
+        ],
+        [
+          12,
+          41,
+          22
+        ]
+      ],
+      "predicted_zodiacs": [
+        "猴",
+        "狗",
+        "蛇",
+        "鼠",
+        "牛"
+      ],
+      "hits": {
+        "hot_numbers": 1,
+        "combo_2_in_2": 0,
+        "combo_3_in_3": 0,
+        "zodiacs": 3
+      }
+    },
+    "special_prediction_review": {
+      "predicted_special_zodiacs": [
+        "牛",
+        "兔",
+        "狗"
+      ],
+      "hits": {
+        "special_zodiacs": 1
+      }
+    }
+  },
+  {
+    "lottery_type": "hk",
+    "period": 124,
+    "review_time": "2025-11-21T03:09:24.020152",
+    "actual_general_numbers": [
+      19,
+      26,
+      33,
+      35,
+      36,
+      39
+    ],
+    "actual_general_zodiacs": [
+      "兔",
+      "猪",
+      "羊",
+      "马",
+      "鸡",
+      "龙"
+    ],
+    "actual_special_number": 5,
+    "actual_special_zodiac": "牛",
+    "general_prediction_review": {
+      "predicted_hot_numbers": [
+        29,
+        35,
+        32,
+        42,
+        34,
+        14,
+        45,
+        24,
+        21,
+        48
+      ],
+      "predicted_combos_3": [
+        [
+          29,
+          32,
+          42
+        ],
+        [
+          35,
+          32,
+          42
+        ],
+        [
+          29,
+          32,
+          25
+        ],
+        [
+          29,
+          42,
+          6
+        ],
+        [
+          29,
+          32,
+          3
+        ]
+      ],
+      "predicted_zodiacs": [
+        "牛",
+        "狗",
+        "蛇",
+        "鼠",
+        "马"
+      ],
+      "hits": {
+        "hot_numbers": 1,
+        "combo_2_in_2": 0,
+        "combo_3_in_3": 0,
+        "zodiacs": 1
+      }
+    },
+    "special_prediction_review": {
+      "predicted_special_zodiacs": [
+        "猪",
+        "狗",
+        "蛇"
+      ],
+      "hits": {
+        "special_zodiacs": 0
+      }
+    }
+  },
+  {
+    "lottery_type": "macau",
+    "period": 323,
+    "review_time": "2025-11-20T18:05:44.059455",
+    "actual_general_numbers": [
+      19,
+      28,
+      29,
+      36,
+      46,
+      48
+    ],
+    "actual_general_zodiacs": [
+      "牛",
+      "猪",
+      "猴",
+      "虎",
+      "马"
+    ],
+    "actual_special_number": 9,
+    "actual_special_zodiac": "鸡",
+    "general_prediction_review": {},
+    "special_prediction_review": {}
+  },
+  {
+    "lottery_type": "hk",
+    "period": 123,
+    "review_time": "2025-11-20T18:05:43.805074",
+    "actual_general_numbers": [
+      2,
+      4,
+      10,
+      26,
+      28,
+      36
+    ],
+    "actual_general_zodiacs": [
+      "猴",
+      "虎",
+      "马",
+      "龙"
+    ],
+    "actual_special_number": 23,
+    "actual_special_zodiac": "羊",
+    "general_prediction_review": {},
+    "special_prediction_review": {}
+  }
+]

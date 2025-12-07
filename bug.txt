@@ -1,0 +1,54 @@
+特码狙击 (第7个号码)
+正在显示第 325 期特码分析结果
+特码推荐生肖
+ValueError: Unknown format code 'f' for object of type 'str'
+Traceback:
+File "D:\lh01\dashboard.py", line 547, in <module>
+    render_analysis_results(lottery_type)
+File "D:\lh01\dashboard.py", line 176, in render_analysis_results
+    html += f'<span class="item-pill">{value[0]} (分数: {value[1]:.2f})</span>'
+                                                        ^^^^^^^^^^^^^^
+
+
+
+
+
+PS D:\lh01> streamlit run dashboard.py --server.headless true
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to false.
+
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.1.6:8501
+  External URL: http://95.181.191.29:8501
+
+────────────────────────── Traceback (most recent call last) ───────────────────────────
+  C:\Users\reki\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\ru
+  ntime\scriptrunner\exec_code.py:129 in exec_func_with_error_handling
+
+  C:\Users\reki\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\ru
+  ntime\scriptrunner\script_runner.py:669 in code_to_exec
+
+  D:\lh01\dashboard.py:547 in <module>
+
+    544 │
+    545 │   render_kpis(lottery_type)
+    546 │   st.markdown("---")
+  ❱ 547 │   render_analysis_results(lottery_type)
+    548
+    549 elif page == "复盘中心":
+    550 │   render_review_center()
+
+  D:\lh01\dashboard.py:176 in render_analysis_results
+
+    173 │   │   │   if key == "特码推荐生肖":
+    174 │   │   │   │   for value in values:
+    175 │   │   │   │   │   # value can be a list or tuple, e.g., ['蛇', 12.34]
+  ❱ 176 │   │   │   │   │   html += f'<span class="item-pill">{value[0]} (分数: {value
+    177 │   │   │   # Handle special case for list of numbers
+    178 │   │   │   elif key == "综合推荐号码":
+    179 │   │   │   │    for number in values:
+────────────────────────────────────────────────────────────────────────────────────────
+ValueError: Unknown format code 'f' for object of type 'str'

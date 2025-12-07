@@ -1,0 +1,149 @@
+
+
+import json
+from collections import Counter
+
+# Import the refactored analysis modules
+import advanced_lottery_analysis as macau_analyzer
+import advanced_hk_analysis as hk_analyzer
+
+def run_backtest(lottery_type, weights, backtest_range=100):
+    """
+    Runs a backtest for a given lottery type with a specific set of weights.
+    Returns a fitness score, prioritizing '3-in-3' hits.
+    """
+    if lottery_type == 'macau':
+        analyzer = macau_analyzer
+    elif lottery_type == 'hk':
+        analyzer = hk_analyzer
+    else:
+        return 0 # Invalid type
+
+    full_history = analyzer.load_data()
+    # trend_lookback is now part of the 'weights' dictionary and is handled by the analyzer.
+    # We set a minimum lookback for the backtester to have enough data.
+    min_lookback = 25 # A safe upper bound from our optimizer's range
+    
+    if not full_history or len(full_history) <= min_lookback:
+        return 0 # Not enough data
+
+    actual_backtest_range = min(backtest_range, len(full_history) - min_lookback)
+    
+    metrics = {'combo_3_in_3_hits': 0, 'combo_2_in_2_hits': 0, 'hot_number_hits': 0}
+
+    for i in range(actual_backtest_range):
+        target_draw = full_history[i]
+        history_for_prediction = full_history[i+1:]
+        
+        if not history_for_prediction: continue
+
+        actual_numbers = {int(n['number']) for n in target_draw.get('numberList', [])}
+        
+        # The analyzer will extract 'trend_lookback' from the 'weights' dictionary itself.
+        prediction = analyzer.advanced_analysis(history_for_prediction, weights)
+        if not prediction: continue
+
+        # Check for combo hits
+        for combo in prediction['combos_3_in_3']:
+            if set(combo).issubset(actual_numbers):
+                metrics['combo_3_in_3_hits'] += 1
+                break
+        for combo in prediction['combos_2_in_2']:
+            if set(combo).issubset(actual_numbers):
+                metrics['combo_2_in_2_hits'] += 1
+                break
+        
+        # Check for hot number hits
+        predicted_numbers = set(prediction['numbers'])
+        metrics['hot_number_hits'] += len(actual_numbers.intersection(predicted_numbers))
+
+    # Calculate a composite fitness score. Prioritize 3-in-3 heavily.
+    fitness_score = (metrics['combo_3_in_3_hits'] * 1000) + \
+                    (metrics['combo_2_in_2_hits'] * 50) + \
+                    (metrics['hot_number_hits'])
+    
+    return fitness_score
+
+def display_backtest_report(lottery_type, weights, backtest_range=100):
+    """
+    A function dedicated to printing a detailed report for a given strategy.
+    This is separated from the main backtesting logic.
+    """
+    print(f"--- 开始对 {lottery_type.upper()} 数据生成详细评估报告 ---")
+    
+    if lottery_type == 'macau':
+        analyzer = macau_analyzer
+    elif lottery_type == 'hk':
+        analyzer = hk_analyzer
+    else:
+        print("错误: 无效的彩票类型。")
+        return
+
+    full_history = analyzer.load_data()
+    # trend_lookback is now part of the 'weights' dictionary and is handled by the analyzer.
+    min_lookback = 25 # A safe upper bound from our optimizer's range
+    actual_backtest_range = min(backtest_range, len(full_history) - min_lookback)
+    print(f"已加载 {len(full_history)} 条数据，将对最近的 {actual_backtest_range} 期进行评估。")
+
+    total_periods_tested = 0
+    metrics = {
+        'hot_number_hits': 0, 'total_hot_numbers_predicted': 0,
+        'top_zodiac_hits': 0, 'combo_2_in_2_hits': 0, 'combo_3_in_3_hits': 0
+    }
+
+    for i in range(actual_backtest_range):
+        target_draw = full_history[i]
+        history_for_prediction = full_history[i+1:]
+        if not history_for_prediction: continue
+        total_periods_tested += 1
+        
+        actual_numbers = {int(n['number']) for n in target_draw.get('numberList', [])}
+        actual_zodiacs = {analyzer.NUM_TO_ZODIAC.get(n) for n in actual_numbers}
+        # The analyzer will extract 'trend_lookback' from the 'weights' dictionary itself.
+        prediction = analyzer.advanced_analysis(history_for_prediction, weights)
+        if not prediction: continue
+
+        predicted_numbers = set(prediction['numbers'])
+        metrics['hot_number_hits'] += len(actual_numbers.intersection(predicted_numbers))
+        metrics['total_hot_numbers_predicted'] += len(predicted_numbers)
+
+        if prediction['zodiacs'] and prediction['zodiacs'][0] in actual_zodiacs:
+            metrics['top_zodiac_hits'] += 1
+            
+        for combo in prediction['combos_2_in_2']:
+            if set(combo).issubset(actual_numbers):
+                metrics['combo_2_in_2_hits'] += 1
+                break
+        for combo in prediction['combos_3_in_3']:
+            if set(combo).issubset(actual_numbers):
+                metrics['combo_3_in_3_hits'] += 1
+                break
+
+    print("\n--- 策略表现报告 ---")
+    if total_periods_tested == 0:
+        print("未能完成任何周期的测试。")
+        return
+
+    print(f"测试期数: {total_periods_tested} 期\n")
+    avg_hits_per_draw = metrics['hot_number_hits'] / total_periods_tested
+    prediction_list_size = metrics['total_hot_numbers_predicted'] / total_periods_tested
+    print(f"【热门号码推荐表现】\n  - 推荐列表大小: 平均每期推荐 {prediction_list_size:.1f} 个号码\n  - 命中表现: 平均每期命中 {avg_hits_per_draw:.2f} 个号码")
+    
+    zodiac_hit_rate = (metrics['top_zodiac_hits'] / total_periods_tested) * 100
+    print(f"\n【头号热门生肖表现】\n  - 命中率: {zodiac_hit_rate:.2f}% (在 {total_periods_tested} 次预测中，头号热门生肖命中了 {metrics['top_zodiac_hits']} 次)")
+
+    print(f"\n【组合推荐表现】\n  - '2中2' 命中次数: 在 {total_periods_tested} 次预测中，成功命中 {metrics['combo_2_in_2_hits']} 次\n  - '3中3' 命中次数: 在 {total_periods_tested} 次预测中，成功命中 {metrics['combo_3_in_3_hits']} 次")
+    print("\n--- 报告结束 ---")
+
+
+if __name__ == "__main__":
+    # This block now demonstrates how to get a detailed report for the default strategy.
+    default_weights = {
+        'hot_score': 0.5, 'cold_score': 0.8, 'category_trend': 1.0,
+        'combo_2_diversity': 1.1, 'combo_3_color_diversity': 1.1, 'combo_3_element_diversity': 1.1
+    }
+    
+    display_backtest_report('macau', default_weights, backtest_range=100)
+    print("\n" + "="*50 + "\n")
+    display_backtest_report('hk', default_weights, backtest_range=50)
+
