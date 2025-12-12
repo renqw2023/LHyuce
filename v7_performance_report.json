@@ -1,0 +1,147 @@
+{
+  "total_tests": 50,
+  "hits": 38,
+  "accuracy": 76.0,
+  "miss_rate": 24.0,
+  "max_hit_streak": 10,
+  "max_miss_streak": 3,
+  "zodiac_stats": {
+    "鼠": {
+      "actual": 7,
+      "hit": 4,
+      "rate": 57.14285714285714
+    },
+    "牛": {
+      "actual": 5,
+      "hit": 1,
+      "rate": 20.0
+    },
+    "虎": {
+      "actual": 6,
+      "hit": 5,
+      "rate": 83.33333333333334
+    },
+    "兔": {
+      "actual": 4,
+      "hit": 4,
+      "rate": 100.0
+    },
+    "龙": {
+      "actual": 5,
+      "hit": 5,
+      "rate": 100.0
+    },
+    "蛇": {
+      "actual": 3,
+      "hit": 3,
+      "rate": 100.0
+    },
+    "马": {
+      "actual": 4,
+      "hit": 4,
+      "rate": 100.0
+    },
+    "羊": {
+      "actual": 5,
+      "hit": 2,
+      "rate": 40.0
+    },
+    "猴": {
+      "actual": 3,
+      "hit": 3,
+      "rate": 100.0
+    },
+    "鸡": {
+      "actual": 3,
+      "hit": 2,
+      "rate": 66.66666666666666
+    },
+    "狗": {
+      "actual": 4,
+      "hit": 4,
+      "rate": 100.0
+    },
+    "猪": {
+      "actual": 1,
+      "hit": 1,
+      "rate": 100.0
+    }
+  },
+  "recent_5": [
+    {
+      "period": 341,
+      "actual": "鼠",
+      "predicted": [
+        "猪",
+        "蛇",
+        "虎",
+        "兔",
+        "猴",
+        "龙",
+        "羊",
+        "鼠"
+      ],
+      "hit": true
+    },
+    {
+      "period": 340,
+      "actual": "虎",
+      "predicted": [
+        "猪",
+        "蛇",
+        "虎",
+        "龙",
+        "兔",
+        "狗",
+        "羊",
+        "鼠"
+      ],
+      "hit": true
+    },
+    {
+      "period": 339,
+      "actual": "马",
+      "predicted": [
+        "猪",
+        "虎",
+        "蛇",
+        "马",
+        "猴",
+        "龙",
+        "羊",
+        "兔"
+      ],
+      "hit": true
+    },
+    {
+      "period": 338,
+      "actual": "狗",
+      "predicted": [
+        "猪",
+        "虎",
+        "蛇",
+        "马",
+        "猴",
+        "狗",
+        "羊",
+        "兔"
+      ],
+      "hit": true
+    },
+    {
+      "period": 337,
+      "actual": "鸡",
+      "predicted": [
+        "猪",
+        "猴",
+        "蛇",
+        "马",
+        "虎",
+        "龙",
+        "羊",
+        "鸡"
+      ],
+      "hit": true
+    }
+  ]
+}

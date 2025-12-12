@@ -6,8 +6,268 @@
     "sort": 1,
     "pageRange": "1-20"
   },
-  "collectionTime": "2025-12-05 02:44:17",
+  "collectionTime": "2025-12-10 17:51:33",
   "totalRecords": [
+    {
+      "id": 20253432,
+      "lotteryTime": "2025年12月09日",
+      "lotteryType": 2,
+      "numberList": [
+        {
+          "color": 3,
+          "number": "11",
+          "shengXiao": "羊",
+          "wuXing": "金"
+        },
+        {
+          "color": 1,
+          "number": "45",
+          "shengXiao": "鸡",
+          "wuXing": "木"
+        },
+        {
+          "color": 2,
+          "number": "41",
+          "shengXiao": "牛",
+          "wuXing": "金"
+        },
+        {
+          "color": 3,
+          "number": "28",
+          "shengXiao": "虎",
+          "wuXing": "土"
+        },
+        {
+          "color": 1,
+          "number": "46",
+          "shengXiao": "猴",
+          "wuXing": "木"
+        },
+        {
+          "color": 1,
+          "number": "35",
+          "shengXiao": "羊",
+          "wuXing": "土"
+        },
+        {
+          "color": 3,
+          "number": "38",
+          "shengXiao": "龙",
+          "wuXing": "木"
+        }
+      ],
+      "period": 343,
+      "periodStr": "343",
+      "year": 2025
+    },
+    {
+      "id": 20253422,
+      "lotteryTime": "2025年12月08日",
+      "lotteryType": 2,
+      "numberList": [
+        {
+          "color": 2,
+          "number": "41",
+          "shengXiao": "牛",
+          "wuXing": "金"
+        },
+        {
+          "color": 1,
+          "number": "19",
+          "shengXiao": "猪",
+          "wuXing": "土"
+        },
+        {
+          "color": 3,
+          "number": "17",
+          "shengXiao": "牛",
+          "wuXing": "火"
+        },
+        {
+          "color": 2,
+          "number": "15",
+          "shengXiao": "兔",
+          "wuXing": "木"
+        },
+        {
+          "color": 1,
+          "number": "24",
+          "shengXiao": "马",
+          "wuXing": "木"
+        },
+        {
+          "color": 1,
+          "number": "08",
+          "shengXiao": "狗",
+          "wuXing": "木"
+        },
+        {
+          "color": 2,
+          "number": "04",
+          "shengXiao": "虎",
+          "wuXing": "金"
+        }
+      ],
+      "period": 342,
+      "periodStr": "342",
+      "year": 2025
+    },
+    {
+      "id": 20253412,
+      "lotteryTime": "2025年12月07日",
+      "lotteryType": 2,
+      "numberList": [
+        {
+          "color": 3,
+          "number": "05",
+          "shengXiao": "牛",
+          "wuXing": "土"
+        },
+        {
+          "color": 1,
+          "number": "34",
+          "shengXiao": "猴",
+          "wuXing": "金"
+        },
+        {
+          "color": 2,
+          "number": "42",
+          "shengXiao": "鼠",
+          "wuXing": "金"
+        },
+        {
+          "color": 1,
+          "number": "07",
+          "shengXiao": "猪",
+          "wuXing": "木"
+        },
+        {
+          "color": 1,
+          "number": "35",
+          "shengXiao": "羊",
+          "wuXing": "土"
+        },
+        {
+          "color": 1,
+          "number": "12",
+          "shengXiao": "马",
+          "wuXing": "金"
+        },
+        {
+          "color": 3,
+          "number": "06",
+          "shengXiao": "鼠",
+          "wuXing": "土"
+        }
+      ],
+      "period": 341,
+      "periodStr": "341",
+      "year": 2025
+    },
+    {
+      "id": 20253402,
+      "lotteryTime": "2025年12月06日",
+      "lotteryType": 2,
+      "numberList": [
+        {
+          "color": 1,
+          "number": "45",
+          "shengXiao": "鸡",
+          "wuXing": "木"
+        },
+        {
+          "color": 3,
+          "number": "17",
+          "shengXiao": "牛",
+          "wuXing": "火"
+        },
+        {
+          "color": 2,
+          "number": "15",
+          "shengXiao": "兔",
+          "wuXing": "木"
+        },
+        {
+          "color": 3,
+          "number": "28",
+          "shengXiao": "虎",
+          "wuXing": "土"
+        },
+        {
+          "color": 3,
+          "number": "22",
+          "shengXiao": "猴",
+          "wuXing": "水"
+        },
+        {
+          "color": 2,
+          "number": "10",
+          "shengXiao": "猴",
+          "wuXing": "火"
+        },
+        {
+          "color": 3,
+          "number": "16",
+          "shengXiao": "虎",
+          "wuXing": "木"
+        }
+      ],
+      "period": 340,
+      "periodStr": "340",
+      "year": 2025
+    },
+    {
+      "id": 20253392,
+      "lotteryTime": "2025年12月05日",
+      "lotteryType": 2,
+      "numberList": [
+        {
+          "color": 1,
+          "number": "24",
+          "shengXiao": "马",
+          "wuXing": "木"
+        },
+        {
+          "color": 3,
+          "number": "22",
+          "shengXiao": "猴",
+          "wuXing": "水"
+        },
+        {
+          "color": 1,
+          "number": "40",
+          "shengXiao": "虎",
+          "wuXing": "火"
+        },
+        {
+          "color": 2,
+          "number": "36",
+          "shengXiao": "马",
+          "wuXing": "土"
+        },
+        {
+          "color": 3,
+          "number": "39",
+          "shengXiao": "兔",
+          "wuXing": "火"
+        },
+        {
+          "color": 2,
+          "number": "31",
+          "shengXiao": "猪",
+          "wuXing": "火"
+        },
+        {
+          "color": 2,
+          "number": "48",
+          "shengXiao": "马",
+          "wuXing": "火"
+        }
+      ],
+      "period": 339,
+      "periodStr": "339",
+      "year": 2025
+    },
     {
       "id": 20253382,
       "lotteryTime": "2025年12月04日",
@@ -3386,526 +3646,6 @@
       ],
       "period": 274,
       "periodStr": "274",
-      "year": 2025
-    },
-    {
-      "id": 20252732,
-      "lotteryTime": "2025年09月30日",
-      "lotteryType": 2,
-      "numberList": [
-        {
-          "color": 1,
-          "number": "02",
-          "shengXiao": "龙",
-          "wuXing": "火"
-        },
-        {
-          "color": 3,
-          "number": "43",
-          "shengXiao": "猪",
-          "wuXing": "水"
-        },
-        {
-          "color": 1,
-          "number": "19",
-          "shengXiao": "猪",
-          "wuXing": "土"
-        },
-        {
-          "color": 1,
-          "number": "34",
-          "shengXiao": "猴",
-          "wuXing": "金"
-        },
-        {
-          "color": 3,
-          "number": "22",
-          "shengXiao": "猴",
-          "wuXing": "水"
-        },
-        {
-          "color": 3,
-          "number": "49",
-          "shengXiao": "蛇",
-          "wuXing": "土"
-        },
-        {
-          "color": 2,
-          "number": "04",
-          "shengXiao": "虎",
-          "wuXing": "金"
-        }
-      ],
-      "period": 273,
-      "periodStr": "273",
-      "year": 2025
-    },
-    {
-      "id": 20252722,
-      "lotteryTime": "2025年09月29日",
-      "lotteryType": 2,
-      "numberList": [
-        {
-          "color": 1,
-          "number": "01",
-          "shengXiao": "蛇",
-          "wuXing": "火"
-        },
-        {
-          "color": 2,
-          "number": "04",
-          "shengXiao": "虎",
-          "wuXing": "金"
-        },
-        {
-          "color": 1,
-          "number": "29",
-          "shengXiao": "牛",
-          "wuXing": "水"
-        },
-        {
-          "color": 2,
-          "number": "41",
-          "shengXiao": "牛",
-          "wuXing": "金"
-        },
-        {
-          "color": 2,
-          "number": "10",
-          "shengXiao": "猴",
-          "wuXing": "火"
-        },
-        {
-          "color": 3,
-          "number": "21",
-          "shengXiao": "鸡",
-          "wuXing": "水"
-        },
-        {
-          "color": 2,
-          "number": "36",
-          "shengXiao": "马",
-          "wuXing": "土"
-        }
-      ],
-      "period": 272,
-      "periodStr": "272",
-      "year": 2025
-    },
-    {
-      "id": 20252712,
-      "lotteryTime": "2025年09月28日",
-      "lotteryType": 2,
-      "numberList": [
-        {
-          "color": 2,
-          "number": "48",
-          "shengXiao": "马",
-          "wuXing": "火"
-        },
-        {
-          "color": 2,
-          "number": "03",
-          "shengXiao": "兔",
-          "wuXing": "金"
-        },
-        {
-          "color": 3,
-          "number": "44",
-          "shengXiao": "狗",
-          "wuXing": "水"
-        },
-        {
-          "color": 3,
-          "number": "27",
-          "shengXiao": "兔",
-          "wuXing": "土"
-        },
-        {
-          "color": 1,
-          "number": "08",
-          "shengXiao": "狗",
-          "wuXing": "木"
-        },
-        {
-          "color": 2,
-          "number": "09",
-          "shengXiao": "鸡",
-          "wuXing": "火"
-        },
-        {
-          "color": 3,
-          "number": "06",
-          "shengXiao": "鼠",
-          "wuXing": "土"
-        }
-      ],
-      "period": 271,
-      "periodStr": "271",
-      "year": 2025
-    },
-    {
-      "id": 20252702,
-      "lotteryTime": "2025年09月27日",
-      "lotteryType": 2,
-      "numberList": [
-        {
-          "color": 3,
-          "number": "05",
-          "shengXiao": "牛",
-          "wuXing": "土"
-        },
-        {
-          "color": 3,
-          "number": "11",
-          "shengXiao": "羊",
-          "wuXing": "金"
-        },
-        {
-          "color": 2,
-          "number": "31",
-          "shengXiao": "猪",
-          "wuXing": "火"
-        },
-        {
-          "color": 1,
-          "number": "46",
-          "shengXiao": "猴",
-          "wuXing": "木"
-        },
-        {
-          "color": 2,
-          "number": "03",
-          "shengXiao": "兔",
-          "wuXing": "金"
-        },
-        {
-          "color": 2,
-          "number": "10",
-          "shengXiao": "猴",
-          "wuXing": "火"
-        },
-        {
-          "color": 1,
-          "number": "35",
-          "shengXiao": "羊",
-          "wuXing": "土"
-        }
-      ],
-      "period": 270,
-      "periodStr": "270",
-      "year": 2025
-    },
-    {
-      "id": 20252692,
-      "lotteryTime": "2025年09月26日",
-      "lotteryType": 2,
-      "numberList": [
-        {
-          "color": 3,
-          "number": "17",
-          "shengXiao": "牛",
-          "wuXing": "火"
-        },
-        {
-          "color": 1,
-          "number": "02",
-          "shengXiao": "龙",
-          "wuXing": "火"
-        },
-        {
-          "color": 3,
-          "number": "33",
-          "shengXiao": "鸡",
-          "wuXing": "金"
-        },
-        {
-          "color": 3,
-          "number": "38",
-          "shengXiao": "龙",
-          "wuXing": "木"
-        },
-        {
-          "color": 1,
-          "number": "46",
-          "shengXiao": "猴",
-          "wuXing": "木"
-        },
-        {
-          "color": 3,
-          "number": "21",
-          "shengXiao": "鸡",
-          "wuXing": "水"
-        },
-        {
-          "color": 2,
-          "number": "31",
-          "shengXiao": "猪",
-          "wuXing": "火"
-        }
-      ],
-      "period": 269,
-      "periodStr": "269",
-      "year": 2025
-    },
-    {
-      "id": 20252682,
-      "lotteryTime": "2025年09月25日",
-      "lotteryType": 2,
-      "numberList": [
-        {
-          "color": 3,
-          "number": "39",
-          "shengXiao": "兔",
-          "wuXing": "火"
-        },
-        {
-          "color": 3,
-          "number": "27",
-          "shengXiao": "兔",
-          "wuXing": "土"
-        },
-        {
-          "color": 1,
-          "number": "01",
-          "shengXiao": "蛇",
-          "wuXing": "火"
-        },
-        {
-          "color": 1,
-          "number": "45",
-          "shengXiao": "鸡",
-          "wuXing": "木"
-        },
-        {
-          "color": 3,
-          "number": "05",
-          "shengXiao": "牛",
-          "wuXing": "土"
-        },
-        {
-          "color": 2,
-          "number": "31",
-          "shengXiao": "猪",
-          "wuXing": "火"
-        },
-        {
-          "color": 2,
-          "number": "10",
-          "shengXiao": "猴",
-          "wuXing": "火"
-        }
-      ],
-      "period": 268,
-      "periodStr": "268",
-      "year": 2025
-    },
-    {
-      "id": 20252672,
-      "lotteryTime": "2025年09月24日",
-      "lotteryType": 2,
-      "numberList": [
-        {
-          "color": 1,
-          "number": "07",
-          "shengXiao": "猪",
-          "wuXing": "木"
-        },
-        {
-          "color": 2,
-          "number": "09",
-          "shengXiao": "鸡",
-          "wuXing": "火"
-        },
-        {
-          "color": 3,
-          "number": "05",
-          "shengXiao": "牛",
-          "wuXing": "土"
-        },
-        {
-          "color": 2,
-          "number": "25",
-          "shengXiao": "蛇",
-          "wuXing": "金"
-        },
-        {
-          "color": 2,
-          "number": "48",
-          "shengXiao": "马",
-          "wuXing": "火"
-        },
-        {
-          "color": 1,
-          "number": "40",
-          "shengXiao": "虎",
-          "wuXing": "火"
-        },
-        {
-          "color": 1,
-          "number": "29",
-          "shengXiao": "牛",
-          "wuXing": "水"
-        }
-      ],
-      "period": 267,
-      "periodStr": "267",
-      "year": 2025
-    },
-    {
-      "id": 20252662,
-      "lotteryTime": "2025年09月23日",
-      "lotteryType": 2,
-      "numberList": [
-        {
-          "color": 1,
-          "number": "01",
-          "shengXiao": "蛇",
-          "wuXing": "火"
-        },
-        {
-          "color": 1,
-          "number": "18",
-          "shengXiao": "鼠",
-          "wuXing": "火"
-        },
-        {
-          "color": 1,
-          "number": "13",
-          "shengXiao": "蛇",
-          "wuXing": "水"
-        },
-        {
-          "color": 3,
-          "number": "43",
-          "shengXiao": "猪",
-          "wuXing": "水"
-        },
-        {
-          "color": 2,
-          "number": "26",
-          "shengXiao": "龙",
-          "wuXing": "金"
-        },
-        {
-          "color": 1,
-          "number": "40",
-          "shengXiao": "虎",
-          "wuXing": "火"
-        },
-        {
-          "color": 2,
-          "number": "41",
-          "shengXiao": "牛",
-          "wuXing": "金"
-        }
-      ],
-      "period": 266,
-      "periodStr": "266",
-      "year": 2025
-    },
-    {
-      "id": 20252652,
-      "lotteryTime": "2025年09月22日",
-      "lotteryType": 2,
-      "numberList": [
-        {
-          "color": 3,
-          "number": "44",
-          "shengXiao": "狗",
-          "wuXing": "水"
-        },
-        {
-          "color": 1,
-          "number": "34",
-          "shengXiao": "猴",
-          "wuXing": "金"
-        },
-        {
-          "color": 2,
-          "number": "48",
-          "shengXiao": "马",
-          "wuXing": "火"
-        },
-        {
-          "color": 3,
-          "number": "06",
-          "shengXiao": "鼠",
-          "wuXing": "土"
-        },
-        {
-          "color": 1,
-          "number": "23",
-          "shengXiao": "羊",
-          "wuXing": "木"
-        },
-        {
-          "color": 1,
-          "number": "01",
-          "shengXiao": "蛇",
-          "wuXing": "火"
-        },
-        {
-          "color": 2,
-          "number": "10",
-          "shengXiao": "猴",
-          "wuXing": "火"
-        }
-      ],
-      "period": 265,
-      "periodStr": "265",
-      "year": 2025
-    },
-    {
-      "id": 20252642,
-      "lotteryTime": "2025年09月21日",
-      "lotteryType": 2,
-      "numberList": [
-        {
-          "color": 1,
-          "number": "23",
-          "shengXiao": "羊",
-          "wuXing": "木"
-        },
-        {
-          "color": 3,
-          "number": "33",
-          "shengXiao": "鸡",
-          "wuXing": "金"
-        },
-        {
-          "color": 3,
-          "number": "06",
-          "shengXiao": "鼠",
-          "wuXing": "土"
-        },
-        {
-          "color": 3,
-          "number": "32",
-          "shengXiao": "狗",
-          "wuXing": "火"
-        },
-        {
-          "color": 1,
-          "number": "19",
-          "shengXiao": "猪",
-          "wuXing": "土"
-        },
-        {
-          "color": 2,
-          "number": "47",
-          "shengXiao": "羊",
-          "wuXing": "火"
-        },
-        {
-          "color": 3,
-          "number": "43",
-          "shengXiao": "猪",
-          "wuXing": "水"
-        }
-      ],
-      "period": 264,
-      "periodStr": "264",
       "year": 2025
     },
     {
@@ -10147,273 +9887,13 @@
       "period": 144,
       "periodStr": "144",
       "year": 2025
-    },
-    {
-      "id": 20251432,
-      "lotteryTime": "2025年05月23日",
-      "lotteryType": 2,
-      "numberList": [
-        {
-          "color": 3,
-          "number": "27",
-          "shengXiao": "兔",
-          "wuXing": "土"
-        },
-        {
-          "color": 1,
-          "number": "19",
-          "shengXiao": "猪",
-          "wuXing": "土"
-        },
-        {
-          "color": 3,
-          "number": "17",
-          "shengXiao": "牛",
-          "wuXing": "火"
-        },
-        {
-          "color": 1,
-          "number": "02",
-          "shengXiao": "龙",
-          "wuXing": "火"
-        },
-        {
-          "color": 1,
-          "number": "24",
-          "shengXiao": "马",
-          "wuXing": "木"
-        },
-        {
-          "color": 2,
-          "number": "15",
-          "shengXiao": "兔",
-          "wuXing": "木"
-        },
-        {
-          "color": 2,
-          "number": "10",
-          "shengXiao": "猴",
-          "wuXing": "火"
-        }
-      ],
-      "period": 143,
-      "periodStr": "143",
-      "year": 2025
-    },
-    {
-      "id": 20251422,
-      "lotteryTime": "2025年05月22日",
-      "lotteryType": 2,
-      "numberList": [
-        {
-          "color": 3,
-          "number": "17",
-          "shengXiao": "牛",
-          "wuXing": "火"
-        },
-        {
-          "color": 1,
-          "number": "30",
-          "shengXiao": "鼠",
-          "wuXing": "水"
-        },
-        {
-          "color": 1,
-          "number": "08",
-          "shengXiao": "狗",
-          "wuXing": "木"
-        },
-        {
-          "color": 1,
-          "number": "29",
-          "shengXiao": "牛",
-          "wuXing": "水"
-        },
-        {
-          "color": 1,
-          "number": "23",
-          "shengXiao": "羊",
-          "wuXing": "木"
-        },
-        {
-          "color": 3,
-          "number": "33",
-          "shengXiao": "鸡",
-          "wuXing": "金"
-        },
-        {
-          "color": 3,
-          "number": "44",
-          "shengXiao": "狗",
-          "wuXing": "水"
-        }
-      ],
-      "period": 142,
-      "periodStr": "142",
-      "year": 2025
-    },
-    {
-      "id": 20251412,
-      "lotteryTime": "2025年05月21日",
-      "lotteryType": 2,
-      "numberList": [
-        {
-          "color": 1,
-          "number": "30",
-          "shengXiao": "鼠",
-          "wuXing": "水"
-        },
-        {
-          "color": 3,
-          "number": "22",
-          "shengXiao": "猴",
-          "wuXing": "水"
-        },
-        {
-          "color": 2,
-          "number": "31",
-          "shengXiao": "猪",
-          "wuXing": "火"
-        },
-        {
-          "color": 1,
-          "number": "34",
-          "shengXiao": "猴",
-          "wuXing": "金"
-        },
-        {
-          "color": 3,
-          "number": "39",
-          "shengXiao": "兔",
-          "wuXing": "火"
-        },
-        {
-          "color": 2,
-          "number": "03",
-          "shengXiao": "兔",
-          "wuXing": "金"
-        },
-        {
-          "color": 1,
-          "number": "13",
-          "shengXiao": "蛇",
-          "wuXing": "水"
-        }
-      ],
-      "period": 141,
-      "periodStr": "141",
-      "year": 2025
-    },
-    {
-      "id": 20251402,
-      "lotteryTime": "2025年05月20日",
-      "lotteryType": 2,
-      "numberList": [
-        {
-          "color": 3,
-          "number": "22",
-          "shengXiao": "猴",
-          "wuXing": "水"
-        },
-        {
-          "color": 1,
-          "number": "45",
-          "shengXiao": "鸡",
-          "wuXing": "木"
-        },
-        {
-          "color": 1,
-          "number": "02",
-          "shengXiao": "龙",
-          "wuXing": "火"
-        },
-        {
-          "color": 2,
-          "number": "41",
-          "shengXiao": "牛",
-          "wuXing": "金"
-        },
-        {
-          "color": 3,
-          "number": "39",
-          "shengXiao": "兔",
-          "wuXing": "火"
-        },
-        {
-          "color": 2,
-          "number": "31",
-          "shengXiao": "猪",
-          "wuXing": "火"
-        },
-        {
-          "color": 3,
-          "number": "11",
-          "shengXiao": "羊",
-          "wuXing": "金"
-        }
-      ],
-      "period": 140,
-      "periodStr": "140",
-      "year": 2025
-    },
-    {
-      "id": 20251392,
-      "lotteryTime": "2025年05月19日",
-      "lotteryType": 2,
-      "numberList": [
-        {
-          "color": 3,
-          "number": "38",
-          "shengXiao": "龙",
-          "wuXing": "木"
-        },
-        {
-          "color": 3,
-          "number": "27",
-          "shengXiao": "兔",
-          "wuXing": "土"
-        },
-        {
-          "color": 2,
-          "number": "47",
-          "shengXiao": "羊",
-          "wuXing": "火"
-        },
-        {
-          "color": 1,
-          "number": "30",
-          "shengXiao": "鼠",
-          "wuXing": "水"
-        },
-        {
-          "color": 1,
-          "number": "45",
-          "shengXiao": "鸡",
-          "wuXing": "木"
-        },
-        {
-          "color": 2,
-          "number": "09",
-          "shengXiao": "鸡",
-          "wuXing": "火"
-        },
-        {
-          "color": 2,
-          "number": "14",
-          "shengXiao": "龙",
-          "wuXing": "水"
-        }
-      ],
-      "period": 139,
-      "periodStr": "139",
-      "year": 2025
     }
   ],
   "pages": [
     {
       "pageNum": 1,
       "data": {
-        "key": "2025-12-04 22:18:32",
+        "key": "2025-12-09 21:41:21",
         "pager": {
           "pageNum": 1,
           "pageSize": 10,
@@ -10422,6 +9902,266 @@
           "totalPageCount": 1
         },
         "recordList": [
+          {
+            "id": 20253432,
+            "lotteryTime": "2025年12月09日",
+            "lotteryType": 2,
+            "numberList": [
+              {
+                "color": 3,
+                "number": "11",
+                "shengXiao": "羊",
+                "wuXing": "金"
+              },
+              {
+                "color": 1,
+                "number": "45",
+                "shengXiao": "鸡",
+                "wuXing": "木"
+              },
+              {
+                "color": 2,
+                "number": "41",
+                "shengXiao": "牛",
+                "wuXing": "金"
+              },
+              {
+                "color": 3,
+                "number": "28",
+                "shengXiao": "虎",
+                "wuXing": "土"
+              },
+              {
+                "color": 1,
+                "number": "46",
+                "shengXiao": "猴",
+                "wuXing": "木"
+              },
+              {
+                "color": 1,
+                "number": "35",
+                "shengXiao": "羊",
+                "wuXing": "土"
+              },
+              {
+                "color": 3,
+                "number": "38",
+                "shengXiao": "龙",
+                "wuXing": "木"
+              }
+            ],
+            "period": 343,
+            "periodStr": "343",
+            "year": 2025
+          },
+          {
+            "id": 20253422,
+            "lotteryTime": "2025年12月08日",
+            "lotteryType": 2,
+            "numberList": [
+              {
+                "color": 2,
+                "number": "41",
+                "shengXiao": "牛",
+                "wuXing": "金"
+              },
+              {
+                "color": 1,
+                "number": "19",
+                "shengXiao": "猪",
+                "wuXing": "土"
+              },
+              {
+                "color": 3,
+                "number": "17",
+                "shengXiao": "牛",
+                "wuXing": "火"
+              },
+              {
+                "color": 2,
+                "number": "15",
+                "shengXiao": "兔",
+                "wuXing": "木"
+              },
+              {
+                "color": 1,
+                "number": "24",
+                "shengXiao": "马",
+                "wuXing": "木"
+              },
+              {
+                "color": 1,
+                "number": "08",
+                "shengXiao": "狗",
+                "wuXing": "木"
+              },
+              {
+                "color": 2,
+                "number": "04",
+                "shengXiao": "虎",
+                "wuXing": "金"
+              }
+            ],
+            "period": 342,
+            "periodStr": "342",
+            "year": 2025
+          },
+          {
+            "id": 20253412,
+            "lotteryTime": "2025年12月07日",
+            "lotteryType": 2,
+            "numberList": [
+              {
+                "color": 3,
+                "number": "05",
+                "shengXiao": "牛",
+                "wuXing": "土"
+              },
+              {
+                "color": 1,
+                "number": "34",
+                "shengXiao": "猴",
+                "wuXing": "金"
+              },
+              {
+                "color": 2,
+                "number": "42",
+                "shengXiao": "鼠",
+                "wuXing": "金"
+              },
+              {
+                "color": 1,
+                "number": "07",
+                "shengXiao": "猪",
+                "wuXing": "木"
+              },
+              {
+                "color": 1,
+                "number": "35",
+                "shengXiao": "羊",
+                "wuXing": "土"
+              },
+              {
+                "color": 1,
+                "number": "12",
+                "shengXiao": "马",
+                "wuXing": "金"
+              },
+              {
+                "color": 3,
+                "number": "06",
+                "shengXiao": "鼠",
+                "wuXing": "土"
+              }
+            ],
+            "period": 341,
+            "periodStr": "341",
+            "year": 2025
+          },
+          {
+            "id": 20253402,
+            "lotteryTime": "2025年12月06日",
+            "lotteryType": 2,
+            "numberList": [
+              {
+                "color": 1,
+                "number": "45",
+                "shengXiao": "鸡",
+                "wuXing": "木"
+              },
+              {
+                "color": 3,
+                "number": "17",
+                "shengXiao": "牛",
+                "wuXing": "火"
+              },
+              {
+                "color": 2,
+                "number": "15",
+                "shengXiao": "兔",
+                "wuXing": "木"
+              },
+              {
+                "color": 3,
+                "number": "28",
+                "shengXiao": "虎",
+                "wuXing": "土"
+              },
+              {
+                "color": 3,
+                "number": "22",
+                "shengXiao": "猴",
+                "wuXing": "水"
+              },
+              {
+                "color": 2,
+                "number": "10",
+                "shengXiao": "猴",
+                "wuXing": "火"
+              },
+              {
+                "color": 3,
+                "number": "16",
+                "shengXiao": "虎",
+                "wuXing": "木"
+              }
+            ],
+            "period": 340,
+            "periodStr": "340",
+            "year": 2025
+          },
+          {
+            "id": 20253392,
+            "lotteryTime": "2025年12月05日",
+            "lotteryType": 2,
+            "numberList": [
+              {
+                "color": 1,
+                "number": "24",
+                "shengXiao": "马",
+                "wuXing": "木"
+              },
+              {
+                "color": 3,
+                "number": "22",
+                "shengXiao": "猴",
+                "wuXing": "水"
+              },
+              {
+                "color": 1,
+                "number": "40",
+                "shengXiao": "虎",
+                "wuXing": "火"
+              },
+              {
+                "color": 2,
+                "number": "36",
+                "shengXiao": "马",
+                "wuXing": "土"
+              },
+              {
+                "color": 3,
+                "number": "39",
+                "shengXiao": "兔",
+                "wuXing": "火"
+              },
+              {
+                "color": 2,
+                "number": "31",
+                "shengXiao": "猪",
+                "wuXing": "火"
+              },
+              {
+                "color": 2,
+                "number": "48",
+                "shengXiao": "马",
+                "wuXing": "火"
+              }
+            ],
+            "period": 339,
+            "periodStr": "339",
+            "year": 2025
+          },
           {
             "id": 20253382,
             "lotteryTime": "2025年12月04日",
@@ -10681,7 +10421,23 @@
             "period": 334,
             "periodStr": "334",
             "year": 2025
-          },
+          }
+        ],
+        "refresh": false
+      }
+    },
+    {
+      "pageNum": 2,
+      "data": {
+        "key": "2025-12-09 21:41:21",
+        "pager": {
+          "pageNum": 2,
+          "pageSize": 10,
+          "start": 11,
+          "totalCount": -1,
+          "totalPageCount": 1
+        },
+        "recordList": [
           {
             "id": 20253332,
             "lotteryTime": "2025年11月29日",
@@ -10941,23 +10697,7 @@
             "period": 329,
             "periodStr": "329",
             "year": 2025
-          }
-        ],
-        "refresh": false
-      }
-    },
-    {
-      "pageNum": 2,
-      "data": {
-        "key": "2025-12-04 22:18:32",
-        "pager": {
-          "pageNum": 2,
-          "pageSize": 10,
-          "start": 11,
-          "totalCount": -1,
-          "totalPageCount": 1
-        },
-        "recordList": [
+          },
           {
             "id": 20253282,
             "lotteryTime": "2025年11月24日",
@@ -11217,7 +10957,23 @@
             "period": 324,
             "periodStr": "324",
             "year": 2025
-          },
+          }
+        ],
+        "refresh": false
+      }
+    },
+    {
+      "pageNum": 3,
+      "data": {
+        "key": "2025-12-09 21:41:21",
+        "pager": {
+          "pageNum": 3,
+          "pageSize": 10,
+          "start": 21,
+          "totalCount": -1,
+          "totalPageCount": 1
+        },
+        "recordList": [
           {
             "id": 20253232,
             "lotteryTime": "2025年11月19日",
@@ -11477,23 +11233,7 @@
             "period": 319,
             "periodStr": "319",
             "year": 2025
-          }
-        ],
-        "refresh": false
-      }
-    },
-    {
-      "pageNum": 3,
-      "data": {
-        "key": "2025-12-04 22:18:32",
-        "pager": {
-          "pageNum": 3,
-          "pageSize": 10,
-          "start": 21,
-          "totalCount": -1,
-          "totalPageCount": 1
-        },
-        "recordList": [
+          },
           {
             "id": 20253182,
             "lotteryTime": "2025年11月14日",
@@ -11753,7 +11493,23 @@
             "period": 314,
             "periodStr": "314",
             "year": 2025
-          },
+          }
+        ],
+        "refresh": false
+      }
+    },
+    {
+      "pageNum": 4,
+      "data": {
+        "key": "2025-12-09 21:41:21",
+        "pager": {
+          "pageNum": 4,
+          "pageSize": 10,
+          "start": 31,
+          "totalCount": -1,
+          "totalPageCount": 1
+        },
+        "recordList": [
           {
             "id": 20253132,
             "lotteryTime": "2025年11月09日",
@@ -12013,23 +11769,7 @@
             "period": 309,
             "periodStr": "309",
             "year": 2025
-          }
-        ],
-        "refresh": false
-      }
-    },
-    {
-      "pageNum": 4,
-      "data": {
-        "key": "2025-12-04 22:18:32",
-        "pager": {
-          "pageNum": 4,
-          "pageSize": 10,
-          "start": 31,
-          "totalCount": -1,
-          "totalPageCount": 1
-        },
-        "recordList": [
+          },
           {
             "id": 20253082,
             "lotteryTime": "2025年11月04日",
@@ -12289,7 +12029,23 @@
             "period": 304,
             "periodStr": "304",
             "year": 2025
-          },
+          }
+        ],
+        "refresh": false
+      }
+    },
+    {
+      "pageNum": 5,
+      "data": {
+        "key": "2025-12-09 21:41:21",
+        "pager": {
+          "pageNum": 5,
+          "pageSize": 10,
+          "start": 41,
+          "totalCount": -1,
+          "totalPageCount": 1
+        },
+        "recordList": [
           {
             "id": 20253032,
             "lotteryTime": "2025年10月30日",
@@ -12549,23 +12305,7 @@
             "period": 299,
             "periodStr": "299",
             "year": 2025
-          }
-        ],
-        "refresh": false
-      }
-    },
-    {
-      "pageNum": 5,
-      "data": {
-        "key": "2025-12-04 22:18:32",
-        "pager": {
-          "pageNum": 5,
-          "pageSize": 10,
-          "start": 41,
-          "totalCount": -1,
-          "totalPageCount": 1
-        },
-        "recordList": [
+          },
           {
             "id": 20252982,
             "lotteryTime": "2025年10月25日",
@@ -12825,7 +12565,23 @@
             "period": 294,
             "periodStr": "294",
             "year": 2025
-          },
+          }
+        ],
+        "refresh": false
+      }
+    },
+    {
+      "pageNum": 6,
+      "data": {
+        "key": "2025-12-09 21:41:21",
+        "pager": {
+          "pageNum": 6,
+          "pageSize": 10,
+          "start": 51,
+          "totalCount": -1,
+          "totalPageCount": 1
+        },
+        "recordList": [
           {
             "id": 20252932,
             "lotteryTime": "2025年10月20日",
@@ -13085,23 +12841,7 @@
             "period": 289,
             "periodStr": "289",
             "year": 2025
-          }
-        ],
-        "refresh": false
-      }
-    },
-    {
-      "pageNum": 6,
-      "data": {
-        "key": "2025-12-04 22:18:32",
-        "pager": {
-          "pageNum": 6,
-          "pageSize": 10,
-          "start": 51,
-          "totalCount": -1,
-          "totalPageCount": 1
-        },
-        "recordList": [
+          },
           {
             "id": 20252882,
             "lotteryTime": "2025年10月15日",
@@ -13361,7 +13101,23 @@
             "period": 284,
             "periodStr": "284",
             "year": 2025
-          },
+          }
+        ],
+        "refresh": false
+      }
+    },
+    {
+      "pageNum": 7,
+      "data": {
+        "key": "2025-12-09 21:41:21",
+        "pager": {
+          "pageNum": 7,
+          "pageSize": 10,
+          "start": 61,
+          "totalCount": -1,
+          "totalPageCount": 1
+        },
+        "recordList": [
           {
             "id": 20252832,
             "lotteryTime": "2025年10月10日",
@@ -13621,23 +13377,7 @@
             "period": 279,
             "periodStr": "279",
             "year": 2025
-          }
-        ],
-        "refresh": false
-      }
-    },
-    {
-      "pageNum": 7,
-      "data": {
-        "key": "2025-12-04 22:18:32",
-        "pager": {
-          "pageNum": 7,
-          "pageSize": 10,
-          "start": 61,
-          "totalCount": -1,
-          "totalPageCount": 1
-        },
-        "recordList": [
+          },
           {
             "id": 20252782,
             "lotteryTime": "2025年10月05日",
@@ -13897,543 +13637,23 @@
             "period": 274,
             "periodStr": "274",
             "year": 2025
-          },
-          {
-            "id": 20252732,
-            "lotteryTime": "2025年09月30日",
-            "lotteryType": 2,
-            "numberList": [
-              {
-                "color": 1,
-                "number": "02",
-                "shengXiao": "龙",
-                "wuXing": "火"
-              },
-              {
-                "color": 3,
-                "number": "43",
-                "shengXiao": "猪",
-                "wuXing": "水"
-              },
-              {
-                "color": 1,
-                "number": "19",
-                "shengXiao": "猪",
-                "wuXing": "土"
-              },
-              {
-                "color": 1,
-                "number": "34",
-                "shengXiao": "猴",
-                "wuXing": "金"
-              },
-              {
-                "color": 3,
-                "number": "22",
-                "shengXiao": "猴",
-                "wuXing": "水"
-              },
-              {
-                "color": 3,
-                "number": "49",
-                "shengXiao": "蛇",
-                "wuXing": "土"
-              },
-              {
-                "color": 2,
-                "number": "04",
-                "shengXiao": "虎",
-                "wuXing": "金"
-              }
-            ],
-            "period": 273,
-            "periodStr": "273",
-            "year": 2025
-          },
-          {
-            "id": 20252722,
-            "lotteryTime": "2025年09月29日",
-            "lotteryType": 2,
-            "numberList": [
-              {
-                "color": 1,
-                "number": "01",
-                "shengXiao": "蛇",
-                "wuXing": "火"
-              },
-              {
-                "color": 2,
-                "number": "04",
-                "shengXiao": "虎",
-                "wuXing": "金"
-              },
-              {
-                "color": 1,
-                "number": "29",
-                "shengXiao": "牛",
-                "wuXing": "水"
-              },
-              {
-                "color": 2,
-                "number": "41",
-                "shengXiao": "牛",
-                "wuXing": "金"
-              },
-              {
-                "color": 2,
-                "number": "10",
-                "shengXiao": "猴",
-                "wuXing": "火"
-              },
-              {
-                "color": 3,
-                "number": "21",
-                "shengXiao": "鸡",
-                "wuXing": "水"
-              },
-              {
-                "color": 2,
-                "number": "36",
-                "shengXiao": "马",
-                "wuXing": "土"
-              }
-            ],
-            "period": 272,
-            "periodStr": "272",
-            "year": 2025
-          },
-          {
-            "id": 20252712,
-            "lotteryTime": "2025年09月28日",
-            "lotteryType": 2,
-            "numberList": [
-              {
-                "color": 2,
-                "number": "48",
-                "shengXiao": "马",
-                "wuXing": "火"
-              },
-              {
-                "color": 2,
-                "number": "03",
-                "shengXiao": "兔",
-                "wuXing": "金"
-              },
-              {
-                "color": 3,
-                "number": "44",
-                "shengXiao": "狗",
-                "wuXing": "水"
-              },
-              {
-                "color": 3,
-                "number": "27",
-                "shengXiao": "兔",
-                "wuXing": "土"
-              },
-              {
-                "color": 1,
-                "number": "08",
-                "shengXiao": "狗",
-                "wuXing": "木"
-              },
-              {
-                "color": 2,
-                "number": "09",
-                "shengXiao": "鸡",
-                "wuXing": "火"
-              },
-              {
-                "color": 3,
-                "number": "06",
-                "shengXiao": "鼠",
-                "wuXing": "土"
-              }
-            ],
-            "period": 271,
-            "periodStr": "271",
-            "year": 2025
-          },
-          {
-            "id": 20252702,
-            "lotteryTime": "2025年09月27日",
-            "lotteryType": 2,
-            "numberList": [
-              {
-                "color": 3,
-                "number": "05",
-                "shengXiao": "牛",
-                "wuXing": "土"
-              },
-              {
-                "color": 3,
-                "number": "11",
-                "shengXiao": "羊",
-                "wuXing": "金"
-              },
-              {
-                "color": 2,
-                "number": "31",
-                "shengXiao": "猪",
-                "wuXing": "火"
-              },
-              {
-                "color": 1,
-                "number": "46",
-                "shengXiao": "猴",
-                "wuXing": "木"
-              },
-              {
-                "color": 2,
-                "number": "03",
-                "shengXiao": "兔",
-                "wuXing": "金"
-              },
-              {
-                "color": 2,
-                "number": "10",
-                "shengXiao": "猴",
-                "wuXing": "火"
-              },
-              {
-                "color": 1,
-                "number": "35",
-                "shengXiao": "羊",
-                "wuXing": "土"
-              }
-            ],
-            "period": 270,
-            "periodStr": "270",
-            "year": 2025
-          },
-          {
-            "id": 20252692,
-            "lotteryTime": "2025年09月26日",
-            "lotteryType": 2,
-            "numberList": [
-              {
-                "color": 3,
-                "number": "17",
-                "shengXiao": "牛",
-                "wuXing": "火"
-              },
-              {
-                "color": 1,
-                "number": "02",
-                "shengXiao": "龙",
-                "wuXing": "火"
-              },
-              {
-                "color": 3,
-                "number": "33",
-                "shengXiao": "鸡",
-                "wuXing": "金"
-              },
-              {
-                "color": 3,
-                "number": "38",
-                "shengXiao": "龙",
-                "wuXing": "木"
-              },
-              {
-                "color": 1,
-                "number": "46",
-                "shengXiao": "猴",
-                "wuXing": "木"
-              },
-              {
-                "color": 3,
-                "number": "21",
-                "shengXiao": "鸡",
-                "wuXing": "水"
-              },
-              {
-                "color": 2,
-                "number": "31",
-                "shengXiao": "猪",
-                "wuXing": "火"
-              }
-            ],
-            "period": 269,
-            "periodStr": "269",
-            "year": 2025
           }
         ],
         "refresh": false
       }
     },
     {
-      "pageNum": 8,
+      "pageNum": 9,
       "data": {
-        "key": "2025-12-04 22:18:32",
+        "key": "2025-12-09 21:41:21",
         "pager": {
-          "pageNum": 8,
+          "pageNum": 9,
           "pageSize": 10,
-          "start": 71,
+          "start": 81,
           "totalCount": -1,
           "totalPageCount": 1
         },
         "recordList": [
-          {
-            "id": 20252682,
-            "lotteryTime": "2025年09月25日",
-            "lotteryType": 2,
-            "numberList": [
-              {
-                "color": 3,
-                "number": "39",
-                "shengXiao": "兔",
-                "wuXing": "火"
-              },
-              {
-                "color": 3,
-                "number": "27",
-                "shengXiao": "兔",
-                "wuXing": "土"
-              },
-              {
-                "color": 1,
-                "number": "01",
-                "shengXiao": "蛇",
-                "wuXing": "火"
-              },
-              {
-                "color": 1,
-                "number": "45",
-                "shengXiao": "鸡",
-                "wuXing": "木"
-              },
-              {
-                "color": 3,
-                "number": "05",
-                "shengXiao": "牛",
-                "wuXing": "土"
-              },
-              {
-                "color": 2,
-                "number": "31",
-                "shengXiao": "猪",
-                "wuXing": "火"
-              },
-              {
-                "color": 2,
-                "number": "10",
-                "shengXiao": "猴",
-                "wuXing": "火"
-              }
-            ],
-            "period": 268,
-            "periodStr": "268",
-            "year": 2025
-          },
-          {
-            "id": 20252672,
-            "lotteryTime": "2025年09月24日",
-            "lotteryType": 2,
-            "numberList": [
-              {
-                "color": 1,
-                "number": "07",
-                "shengXiao": "猪",
-                "wuXing": "木"
-              },
-              {
-                "color": 2,
-                "number": "09",
-                "shengXiao": "鸡",
-                "wuXing": "火"
-              },
-              {
-                "color": 3,
-                "number": "05",
-                "shengXiao": "牛",
-                "wuXing": "土"
-              },
-              {
-                "color": 2,
-                "number": "25",
-                "shengXiao": "蛇",
-                "wuXing": "金"
-              },
-              {
-                "color": 2,
-                "number": "48",
-                "shengXiao": "马",
-                "wuXing": "火"
-              },
-              {
-                "color": 1,
-                "number": "40",
-                "shengXiao": "虎",
-                "wuXing": "火"
-              },
-              {
-                "color": 1,
-                "number": "29",
-                "shengXiao": "牛",
-                "wuXing": "水"
-              }
-            ],
-            "period": 267,
-            "periodStr": "267",
-            "year": 2025
-          },
-          {
-            "id": 20252662,
-            "lotteryTime": "2025年09月23日",
-            "lotteryType": 2,
-            "numberList": [
-              {
-                "color": 1,
-                "number": "01",
-                "shengXiao": "蛇",
-                "wuXing": "火"
-              },
-              {
-                "color": 1,
-                "number": "18",
-                "shengXiao": "鼠",
-                "wuXing": "火"
-              },
-              {
-                "color": 1,
-                "number": "13",
-                "shengXiao": "蛇",
-                "wuXing": "水"
-              },
-              {
-                "color": 3,
-                "number": "43",
-                "shengXiao": "猪",
-                "wuXing": "水"
-              },
-              {
-                "color": 2,
-                "number": "26",
-                "shengXiao": "龙",
-                "wuXing": "金"
-              },
-              {
-                "color": 1,
-                "number": "40",
-                "shengXiao": "虎",
-                "wuXing": "火"
-              },
-              {
-                "color": 2,
-                "number": "41",
-                "shengXiao": "牛",
-                "wuXing": "金"
-              }
-            ],
-            "period": 266,
-            "periodStr": "266",
-            "year": 2025
-          },
-          {
-            "id": 20252652,
-            "lotteryTime": "2025年09月22日",
-            "lotteryType": 2,
-            "numberList": [
-              {
-                "color": 3,
-                "number": "44",
-                "shengXiao": "狗",
-                "wuXing": "水"
-              },
-              {
-                "color": 1,
-                "number": "34",
-                "shengXiao": "猴",
-                "wuXing": "金"
-              },
-              {
-                "color": 2,
-                "number": "48",
-                "shengXiao": "马",
-                "wuXing": "火"
-              },
-              {
-                "color": 3,
-                "number": "06",
-                "shengXiao": "鼠",
-                "wuXing": "土"
-              },
-              {
-                "color": 1,
-                "number": "23",
-                "shengXiao": "羊",
-                "wuXing": "木"
-              },
-              {
-                "color": 1,
-                "number": "01",
-                "shengXiao": "蛇",
-                "wuXing": "火"
-              },
-              {
-                "color": 2,
-                "number": "10",
-                "shengXiao": "猴",
-                "wuXing": "火"
-              }
-            ],
-            "period": 265,
-            "periodStr": "265",
-            "year": 2025
-          },
-          {
-            "id": 20252642,
-            "lotteryTime": "2025年09月21日",
-            "lotteryType": 2,
-            "numberList": [
-              {
-                "color": 1,
-                "number": "23",
-                "shengXiao": "羊",
-                "wuXing": "木"
-              },
-              {
-                "color": 3,
-                "number": "33",
-                "shengXiao": "鸡",
-                "wuXing": "金"
-              },
-              {
-                "color": 3,
-                "number": "06",
-                "shengXiao": "鼠",
-                "wuXing": "土"
-              },
-              {
-                "color": 3,
-                "number": "32",
-                "shengXiao": "狗",
-                "wuXing": "火"
-              },
-              {
-                "color": 1,
-                "number": "19",
-                "shengXiao": "猪",
-                "wuXing": "土"
-              },
-              {
-                "color": 2,
-                "number": "47",
-                "shengXiao": "羊",
-                "wuXing": "火"
-              },
-              {
-                "color": 3,
-                "number": "43",
-                "shengXiao": "猪",
-                "wuXing": "水"
-              }
-            ],
-            "period": 264,
-            "periodStr": "264",
-            "year": 2025
-          },
           {
             "id": 20252632,
             "lotteryTime": "2025年09月20日",
@@ -14693,23 +13913,7 @@
             "period": 259,
             "periodStr": "259",
             "year": 2025
-          }
-        ],
-        "refresh": false
-      }
-    },
-    {
-      "pageNum": 9,
-      "data": {
-        "key": "2025-12-04 22:18:32",
-        "pager": {
-          "pageNum": 9,
-          "pageSize": 10,
-          "start": 81,
-          "totalCount": -1,
-          "totalPageCount": 1
-        },
-        "recordList": [
+          },
           {
             "id": 20252582,
             "lotteryTime": "2025年09月15日",
@@ -14969,7 +14173,23 @@
             "period": 254,
             "periodStr": "254",
             "year": 2025
-          },
+          }
+        ],
+        "refresh": false
+      }
+    },
+    {
+      "pageNum": 10,
+      "data": {
+        "key": "2025-12-09 21:41:21",
+        "pager": {
+          "pageNum": 10,
+          "pageSize": 10,
+          "start": 91,
+          "totalCount": -1,
+          "totalPageCount": 1
+        },
+        "recordList": [
           {
             "id": 20252532,
             "lotteryTime": "2025年09月10日",
@@ -15229,23 +14449,7 @@
             "period": 249,
             "periodStr": "249",
             "year": 2025
-          }
-        ],
-        "refresh": false
-      }
-    },
-    {
-      "pageNum": 10,
-      "data": {
-        "key": "2025-12-04 22:18:32",
-        "pager": {
-          "pageNum": 10,
-          "pageSize": 10,
-          "start": 91,
-          "totalCount": -1,
-          "totalPageCount": 1
-        },
-        "recordList": [
+          },
           {
             "id": 20252482,
             "lotteryTime": "2025年09月05日",
@@ -15505,7 +14709,23 @@
             "period": 244,
             "periodStr": "244",
             "year": 2025
-          },
+          }
+        ],
+        "refresh": false
+      }
+    },
+    {
+      "pageNum": 11,
+      "data": {
+        "key": "2025-12-09 21:41:21",
+        "pager": {
+          "pageNum": 11,
+          "pageSize": 10,
+          "start": 101,
+          "totalCount": -1,
+          "totalPageCount": 1
+        },
+        "recordList": [
           {
             "id": 20252432,
             "lotteryTime": "2025年08月31日",
@@ -15765,23 +14985,7 @@
             "period": 239,
             "periodStr": "239",
             "year": 2025
-          }
-        ],
-        "refresh": false
-      }
-    },
-    {
-      "pageNum": 11,
-      "data": {
-        "key": "2025-12-04 22:18:32",
-        "pager": {
-          "pageNum": 11,
-          "pageSize": 10,
-          "start": 101,
-          "totalCount": -1,
-          "totalPageCount": 1
-        },
-        "recordList": [
+          },
           {
             "id": 20252382,
             "lotteryTime": "2025年08月26日",
@@ -16041,7 +15245,23 @@
             "period": 234,
             "periodStr": "234",
             "year": 2025
-          },
+          }
+        ],
+        "refresh": false
+      }
+    },
+    {
+      "pageNum": 12,
+      "data": {
+        "key": "2025-12-09 21:41:21",
+        "pager": {
+          "pageNum": 12,
+          "pageSize": 10,
+          "start": 111,
+          "totalCount": -1,
+          "totalPageCount": 1
+        },
+        "recordList": [
           {
             "id": 20252332,
             "lotteryTime": "2025年08月21日",
@@ -16301,23 +15521,7 @@
             "period": 229,
             "periodStr": "229",
             "year": 2025
-          }
-        ],
-        "refresh": false
-      }
-    },
-    {
-      "pageNum": 12,
-      "data": {
-        "key": "2025-12-04 22:18:32",
-        "pager": {
-          "pageNum": 12,
-          "pageSize": 10,
-          "start": 111,
-          "totalCount": -1,
-          "totalPageCount": 1
-        },
-        "recordList": [
+          },
           {
             "id": 20252282,
             "lotteryTime": "2025年08月16日",
@@ -16577,7 +15781,23 @@
             "period": 224,
             "periodStr": "224",
             "year": 2025
-          },
+          }
+        ],
+        "refresh": false
+      }
+    },
+    {
+      "pageNum": 13,
+      "data": {
+        "key": "2025-12-09 21:41:21",
+        "pager": {
+          "pageNum": 13,
+          "pageSize": 10,
+          "start": 121,
+          "totalCount": -1,
+          "totalPageCount": 1
+        },
+        "recordList": [
           {
             "id": 20252232,
             "lotteryTime": "2025年08月11日",
@@ -16837,23 +16057,7 @@
             "period": 219,
             "periodStr": "219",
             "year": 2025
-          }
-        ],
-        "refresh": false
-      }
-    },
-    {
-      "pageNum": 13,
-      "data": {
-        "key": "2025-12-04 22:18:34",
-        "pager": {
-          "pageNum": 13,
-          "pageSize": 10,
-          "start": 121,
-          "totalCount": -1,
-          "totalPageCount": 1
-        },
-        "recordList": [
+          },
           {
             "id": 20252182,
             "lotteryTime": "2025年08月06日",
@@ -17113,7 +16317,23 @@
             "period": 214,
             "periodStr": "214",
             "year": 2025
-          },
+          }
+        ],
+        "refresh": false
+      }
+    },
+    {
+      "pageNum": 14,
+      "data": {
+        "key": "2025-12-09 21:41:21",
+        "pager": {
+          "pageNum": 14,
+          "pageSize": 10,
+          "start": 131,
+          "totalCount": -1,
+          "totalPageCount": 1
+        },
+        "recordList": [
           {
             "id": 20252132,
             "lotteryTime": "2025年08月01日",
@@ -17373,23 +16593,7 @@
             "period": 209,
             "periodStr": "209",
             "year": 2025
-          }
-        ],
-        "refresh": false
-      }
-    },
-    {
-      "pageNum": 14,
-      "data": {
-        "key": "2025-12-04 22:18:32",
-        "pager": {
-          "pageNum": 14,
-          "pageSize": 10,
-          "start": 131,
-          "totalCount": -1,
-          "totalPageCount": 1
-        },
-        "recordList": [
+          },
           {
             "id": 20252082,
             "lotteryTime": "2025年07月27日",
@@ -17649,7 +16853,23 @@
             "period": 204,
             "periodStr": "204",
             "year": 2025
-          },
+          }
+        ],
+        "refresh": false
+      }
+    },
+    {
+      "pageNum": 15,
+      "data": {
+        "key": "2025-12-09 21:41:22",
+        "pager": {
+          "pageNum": 15,
+          "pageSize": 10,
+          "start": 141,
+          "totalCount": -1,
+          "totalPageCount": 1
+        },
+        "recordList": [
           {
             "id": 20252032,
             "lotteryTime": "2025年07月22日",
@@ -17909,23 +17129,7 @@
             "period": 199,
             "periodStr": "199",
             "year": 2025
-          }
-        ],
-        "refresh": false
-      }
-    },
-    {
-      "pageNum": 15,
-      "data": {
-        "key": "2025-12-04 22:18:32",
-        "pager": {
-          "pageNum": 15,
-          "pageSize": 10,
-          "start": 141,
-          "totalCount": -1,
-          "totalPageCount": 1
-        },
-        "recordList": [
+          },
           {
             "id": 20251982,
             "lotteryTime": "2025年07月17日",
@@ -18185,7 +17389,23 @@
             "period": 194,
             "periodStr": "194",
             "year": 2025
-          },
+          }
+        ],
+        "refresh": false
+      }
+    },
+    {
+      "pageNum": 16,
+      "data": {
+        "key": "2025-12-09 21:41:21",
+        "pager": {
+          "pageNum": 16,
+          "pageSize": 10,
+          "start": 151,
+          "totalCount": -1,
+          "totalPageCount": 1
+        },
+        "recordList": [
           {
             "id": 20251932,
             "lotteryTime": "2025年07月12日",
@@ -18445,23 +17665,7 @@
             "period": 189,
             "periodStr": "189",
             "year": 2025
-          }
-        ],
-        "refresh": false
-      }
-    },
-    {
-      "pageNum": 16,
-      "data": {
-        "key": "2025-12-04 22:18:32",
-        "pager": {
-          "pageNum": 16,
-          "pageSize": 10,
-          "start": 151,
-          "totalCount": -1,
-          "totalPageCount": 1
-        },
-        "recordList": [
+          },
           {
             "id": 20251882,
             "lotteryTime": "2025年07月07日",
@@ -18721,7 +17925,23 @@
             "period": 184,
             "periodStr": "184",
             "year": 2025
-          },
+          }
+        ],
+        "refresh": false
+      }
+    },
+    {
+      "pageNum": 17,
+      "data": {
+        "key": "2025-12-09 21:41:21",
+        "pager": {
+          "pageNum": 17,
+          "pageSize": 10,
+          "start": 161,
+          "totalCount": -1,
+          "totalPageCount": 1
+        },
+        "recordList": [
           {
             "id": 20251832,
             "lotteryTime": "2025年07月02日",
@@ -18981,23 +18201,7 @@
             "period": 179,
             "periodStr": "179",
             "year": 2025
-          }
-        ],
-        "refresh": false
-      }
-    },
-    {
-      "pageNum": 17,
-      "data": {
-        "key": "2025-12-04 22:18:32",
-        "pager": {
-          "pageNum": 17,
-          "pageSize": 10,
-          "start": 161,
-          "totalCount": -1,
-          "totalPageCount": 1
-        },
-        "recordList": [
+          },
           {
             "id": 20251782,
             "lotteryTime": "2025年06月27日",
@@ -19257,7 +18461,23 @@
             "period": 174,
             "periodStr": "174",
             "year": 2025
-          },
+          }
+        ],
+        "refresh": false
+      }
+    },
+    {
+      "pageNum": 18,
+      "data": {
+        "key": "2025-12-09 21:41:22",
+        "pager": {
+          "pageNum": 18,
+          "pageSize": 10,
+          "start": 171,
+          "totalCount": -1,
+          "totalPageCount": 1
+        },
+        "recordList": [
           {
             "id": 20251732,
             "lotteryTime": "2025年06月22日",
@@ -19517,23 +18737,7 @@
             "period": 169,
             "periodStr": "169",
             "year": 2025
-          }
-        ],
-        "refresh": false
-      }
-    },
-    {
-      "pageNum": 18,
-      "data": {
-        "key": "2025-12-04 22:18:33",
-        "pager": {
-          "pageNum": 18,
-          "pageSize": 10,
-          "start": 171,
-          "totalCount": -1,
-          "totalPageCount": 1
-        },
-        "recordList": [
+          },
           {
             "id": 20251682,
             "lotteryTime": "2025年06月17日",
@@ -19793,7 +18997,23 @@
             "period": 164,
             "periodStr": "164",
             "year": 2025
-          },
+          }
+        ],
+        "refresh": false
+      }
+    },
+    {
+      "pageNum": 19,
+      "data": {
+        "key": "2025-12-09 21:41:23",
+        "pager": {
+          "pageNum": 19,
+          "pageSize": 10,
+          "start": 181,
+          "totalCount": -1,
+          "totalPageCount": 1
+        },
+        "recordList": [
           {
             "id": 20251632,
             "lotteryTime": "2025年06月12日",
@@ -20053,23 +19273,7 @@
             "period": 159,
             "periodStr": "159",
             "year": 2025
-          }
-        ],
-        "refresh": false
-      }
-    },
-    {
-      "pageNum": 19,
-      "data": {
-        "key": "2025-12-04 22:18:32",
-        "pager": {
-          "pageNum": 19,
-          "pageSize": 10,
-          "start": 181,
-          "totalCount": -1,
-          "totalPageCount": 1
-        },
-        "recordList": [
+          },
           {
             "id": 20251582,
             "lotteryTime": "2025年06月07日",
@@ -20329,7 +19533,23 @@
             "period": 154,
             "periodStr": "154",
             "year": 2025
-          },
+          }
+        ],
+        "refresh": false
+      }
+    },
+    {
+      "pageNum": 20,
+      "data": {
+        "key": "2025-12-09 21:41:21",
+        "pager": {
+          "pageNum": 20,
+          "pageSize": 10,
+          "start": 191,
+          "totalCount": -1,
+          "totalPageCount": 1
+        },
+        "recordList": [
           {
             "id": 20251532,
             "lotteryTime": "2025年06月02日",
@@ -20589,23 +19809,7 @@
             "period": 149,
             "periodStr": "149",
             "year": 2025
-          }
-        ],
-        "refresh": false
-      }
-    },
-    {
-      "pageNum": 20,
-      "data": {
-        "key": "2025-12-04 22:18:34",
-        "pager": {
-          "pageNum": 20,
-          "pageSize": 10,
-          "start": 191,
-          "totalCount": -1,
-          "totalPageCount": 1
-        },
-        "recordList": [
+          },
           {
             "id": 20251482,
             "lotteryTime": "2025年05月28日",
@@ -20864,266 +20068,6 @@
             ],
             "period": 144,
             "periodStr": "144",
-            "year": 2025
-          },
-          {
-            "id": 20251432,
-            "lotteryTime": "2025年05月23日",
-            "lotteryType": 2,
-            "numberList": [
-              {
-                "color": 3,
-                "number": "27",
-                "shengXiao": "兔",
-                "wuXing": "土"
-              },
-              {
-                "color": 1,
-                "number": "19",
-                "shengXiao": "猪",
-                "wuXing": "土"
-              },
-              {
-                "color": 3,
-                "number": "17",
-                "shengXiao": "牛",
-                "wuXing": "火"
-              },
-              {
-                "color": 1,
-                "number": "02",
-                "shengXiao": "龙",
-                "wuXing": "火"
-              },
-              {
-                "color": 1,
-                "number": "24",
-                "shengXiao": "马",
-                "wuXing": "木"
-              },
-              {
-                "color": 2,
-                "number": "15",
-                "shengXiao": "兔",
-                "wuXing": "木"
-              },
-              {
-                "color": 2,
-                "number": "10",
-                "shengXiao": "猴",
-                "wuXing": "火"
-              }
-            ],
-            "period": 143,
-            "periodStr": "143",
-            "year": 2025
-          },
-          {
-            "id": 20251422,
-            "lotteryTime": "2025年05月22日",
-            "lotteryType": 2,
-            "numberList": [
-              {
-                "color": 3,
-                "number": "17",
-                "shengXiao": "牛",
-                "wuXing": "火"
-              },
-              {
-                "color": 1,
-                "number": "30",
-                "shengXiao": "鼠",
-                "wuXing": "水"
-              },
-              {
-                "color": 1,
-                "number": "08",
-                "shengXiao": "狗",
-                "wuXing": "木"
-              },
-              {
-                "color": 1,
-                "number": "29",
-                "shengXiao": "牛",
-                "wuXing": "水"
-              },
-              {
-                "color": 1,
-                "number": "23",
-                "shengXiao": "羊",
-                "wuXing": "木"
-              },
-              {
-                "color": 3,
-                "number": "33",
-                "shengXiao": "鸡",
-                "wuXing": "金"
-              },
-              {
-                "color": 3,
-                "number": "44",
-                "shengXiao": "狗",
-                "wuXing": "水"
-              }
-            ],
-            "period": 142,
-            "periodStr": "142",
-            "year": 2025
-          },
-          {
-            "id": 20251412,
-            "lotteryTime": "2025年05月21日",
-            "lotteryType": 2,
-            "numberList": [
-              {
-                "color": 1,
-                "number": "30",
-                "shengXiao": "鼠",
-                "wuXing": "水"
-              },
-              {
-                "color": 3,
-                "number": "22",
-                "shengXiao": "猴",
-                "wuXing": "水"
-              },
-              {
-                "color": 2,
-                "number": "31",
-                "shengXiao": "猪",
-                "wuXing": "火"
-              },
-              {
-                "color": 1,
-                "number": "34",
-                "shengXiao": "猴",
-                "wuXing": "金"
-              },
-              {
-                "color": 3,
-                "number": "39",
-                "shengXiao": "兔",
-                "wuXing": "火"
-              },
-              {
-                "color": 2,
-                "number": "03",
-                "shengXiao": "兔",
-                "wuXing": "金"
-              },
-              {
-                "color": 1,
-                "number": "13",
-                "shengXiao": "蛇",
-                "wuXing": "水"
-              }
-            ],
-            "period": 141,
-            "periodStr": "141",
-            "year": 2025
-          },
-          {
-            "id": 20251402,
-            "lotteryTime": "2025年05月20日",
-            "lotteryType": 2,
-            "numberList": [
-              {
-                "color": 3,
-                "number": "22",
-                "shengXiao": "猴",
-                "wuXing": "水"
-              },
-              {
-                "color": 1,
-                "number": "45",
-                "shengXiao": "鸡",
-                "wuXing": "木"
-              },
-              {
-                "color": 1,
-                "number": "02",
-                "shengXiao": "龙",
-                "wuXing": "火"
-              },
-              {
-                "color": 2,
-                "number": "41",
-                "shengXiao": "牛",
-                "wuXing": "金"
-              },
-              {
-                "color": 3,
-                "number": "39",
-                "shengXiao": "兔",
-                "wuXing": "火"
-              },
-              {
-                "color": 2,
-                "number": "31",
-                "shengXiao": "猪",
-                "wuXing": "火"
-              },
-              {
-                "color": 3,
-                "number": "11",
-                "shengXiao": "羊",
-                "wuXing": "金"
-              }
-            ],
-            "period": 140,
-            "periodStr": "140",
-            "year": 2025
-          },
-          {
-            "id": 20251392,
-            "lotteryTime": "2025年05月19日",
-            "lotteryType": 2,
-            "numberList": [
-              {
-                "color": 3,
-                "number": "38",
-                "shengXiao": "龙",
-                "wuXing": "木"
-              },
-              {
-                "color": 3,
-                "number": "27",
-                "shengXiao": "兔",
-                "wuXing": "土"
-              },
-              {
-                "color": 2,
-                "number": "47",
-                "shengXiao": "羊",
-                "wuXing": "火"
-              },
-              {
-                "color": 1,
-                "number": "30",
-                "shengXiao": "鼠",
-                "wuXing": "水"
-              },
-              {
-                "color": 1,
-                "number": "45",
-                "shengXiao": "鸡",
-                "wuXing": "木"
-              },
-              {
-                "color": 2,
-                "number": "09",
-                "shengXiao": "鸡",
-                "wuXing": "火"
-              },
-              {
-                "color": 2,
-                "number": "14",
-                "shengXiao": "龙",
-                "wuXing": "水"
-              }
-            ],
-            "period": 139,
-            "periodStr": "139",
             "year": 2025
           }
         ],

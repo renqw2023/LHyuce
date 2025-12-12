@@ -1,9 +1,11 @@
 {
-  "special_hot": 0.6364535632749786,
-  "special_gap": 2.188057936985474,
-  "special_zodiac": 3.52591167800907,
-  "special_color_weight": 2.088003151188173,
-  "special_tail_weight": 2.7933574039906945,
-  "special_cold_protect": 3.802622424542945,
-  "special_lookback": 24.442093930735275
+  "special_hot": 0.897218681101033,
+  "special_gap": 1.660837674659478,
+  "special_zodiac": 4.41188273573929,
+  "special_color_weight": 0.46563020063574045,
+  "special_tail_weight": 2.2847532001544173,
+  "special_cold_protect": 3.913376982670385,
+  "special_lookback": 29.866481056608205,
+  "special_resonance": 1.0478756647030039,
+  "special_tail_continuity": 1.485596543840022
 }

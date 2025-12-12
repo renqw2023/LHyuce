@@ -123,28 +123,31 @@ def load_special_number_data(file_path='HK2025_lottery_data_complete.json'):
 
 def analyze_special_trend(special_history, weights):
     """
-    V5 深度升级：全域号码评分系统 (打破生肖漏斗，强化特码命中)
+    V6 核心算法：全域号码评分系统 + 共振效应
+    (Tier 1 Target: Special Number)
     """
     if not special_history:
         return None
 
-    # 1. 动态提取回顾期 (由 AI 决定看多远)
     lookback = int(weights.get('special_lookback', 20))
     if lookback < 5: lookback = 5
     
-    # 提取权重
+    # 提取基础权重
     w_hot = weights.get('special_hot', 1.0)
     w_gap = weights.get('special_gap', 1.5)
     w_zodiac = weights.get('special_zodiac', 2.0)
     w_color = weights.get('special_color_weight', 1.0)
     w_tail = weights.get('special_tail_weight', 1.0)
     w_cold_protect = weights.get('special_cold_protect', 2.0)
+    
+    # 提取 V6 新增权重
+    w_resonance = weights.get('special_resonance', 1.5) # 共振倍率
+    w_tail_cont = weights.get('special_tail_continuity', 1.0)
 
     recent_specials = special_history[:lookback]
 
-    # --- A. 基础维度分析 ---
-    
-    # 1. 生肖分析
+    # --- 1. 多维统计 ---
+    # 生肖
     zodiac_counts = Counter(r['shengXiao'] for r in recent_specials)
     zodiac_last_seen = {z: 100 for z in ZODIAC_MAP.keys()}
     for i, record in enumerate(special_history):
@@ -153,6 +156,22 @@ def analyze_special_trend(special_history, weights):
             zodiac_last_seen[z] = i
     coldest_zodiac = max(zodiac_last_seen, key=zodiac_last_seen.get)
 
+    # 波色
+    color_counts = Counter(r['color'] for r in recent_specials)
+    total_colors = sum(color_counts.values()) or 1
+    color_weights = {c: (count / total_colors) for c, count in color_counts.items()}
+    # 找出最热波色
+    top_colors = {c for c, _ in color_counts.most_common(1)}
+
+    # 尾数
+    tails = [r['number'] % 10 for r in recent_specials]
+    tail_counts = Counter(tails)
+    total_tails = sum(tail_counts.values()) or 1
+    tail_weights = {t: (count / total_tails) for t, count in tail_counts.items()}
+    # 找出最热尾数
+    top_tails = {t for t, _ in tail_counts.most_common(2)}
+
+    # --- 2. 基础评分 (生肖) ---
     zodiac_scores = {}
     for z in ZODIAC_MAP.keys():
         score = zodiac_counts.get(z, 0) * w_hot
@@ -160,30 +179,12 @@ def analyze_special_trend(special_history, weights):
         if gap > 12: score += w_gap * 2
         elif gap == 1: score += w_gap * 0.5
         zodiac_scores[z] = score
-    # 生肖防守加分
     zodiac_scores[coldest_zodiac] += w_cold_protect
-
-    # 2. 波色分析
-    color_counts = Counter(r['color'] for r in recent_specials)
-    total_colors = sum(color_counts.values()) or 1
-    color_weights = {c: (count / total_colors) for c, count in color_counts.items()}
-    top_color = color_counts.most_common(1)[0][0] if color_counts else "未知"
-
-    # 3. 尾数分析
-    tails = [r['number'] % 10 for r in recent_specials]
-    tail_counts = Counter(tails)
-    total_tails = sum(tail_counts.values()) or 1
-    tail_weights = {t: (count / total_tails) for t, count in tail_counts.items()}
-    top_tail = tail_counts.most_common(1)[0][0] if tail_counts else -1
-
-    # 4. 号码独立遗漏分析 (New)
-    number_last_seen = {}
-    for i, record in enumerate(special_history):
-        n = record['number']
-        if n not in number_last_seen:
-            number_last_seen[n] = i
     
-    # --- B. 全域号码评分 (核心变更：直接对49个号码打分) ---
+    # 找出前4名生肖作为“共振候选区”
+    top_zodiacs_list = [z for z, _ in sorted(zodiac_scores.items(), key=lambda x: x[1], reverse=True)[:4]]
+
+    # --- 3. 全域号码评分与共振 (V6 核心) ---
     number_final_scores = Counter()
 
     for num in range(1, 50):
@@ -191,41 +192,43 @@ def analyze_special_trend(special_history, weights):
         c = NUM_TO_CATEGORY['波色'].get(num)
         t = num % 10
         
-        # 基础分：来自生肖 (权重由 AI 决定)
+        # 基础分
         score = zodiac_scores.get(z, 0) * w_zodiac
-        
-        # 加成分：来自波色 (模糊加权)
         score += color_weights.get(c, 0) * w_color * 10
-        
-        # 加成分：来自尾数 (模糊加权)
         score += tail_weights.get(t, 0) * w_tail * 10
         
-        # 独立防守：如果该号码极度冷门 (例如超过40期未出)
-        gap = number_last_seen.get(num, 100)
-        if gap > 40:
-            score += w_cold_protect * 0.5 # 号码级防守
+        # V6 共振检测 (Resonance Check)
+        resonance_level = 0
+        if z in top_zodiacs_list: resonance_level += 1
+        if c in top_colors: resonance_level += 1
+        if t in top_tails: resonance_level += 1
+        
+        # 如果发生共振 (至少2个维度命中热门)，应用共振倍率
+        if resonance_level >= 2:
+            score *= w_resonance
             
         number_final_scores[num] = score
 
-    # --- C. 结果提取 ---
-    # 推荐前 8 个号码
+    # --- 结果 ---
     recommended_numbers = [num for num, s in number_final_scores.most_common(8)]
-    
-    # 为了展示，反推推荐生肖 (取前4名，依据zodiac_scores)
     top_zodiacs_raw = sorted(zodiac_scores.items(), key=lambda x: x[1], reverse=True)[:4]
+    
+    # 获取最高分属性用于展示
+    predicted_color = color_counts.most_common(1)[0][0] if color_counts else "未知"
+    predicted_tail = tail_counts.most_common(1)[0][0] if tail_counts else -1
 
     return {
         "top_zodiacs": top_zodiacs_raw,
-        "predicted_color": top_color,
-        "predicted_tail": top_tail,
+        "predicted_color": predicted_color,
+        "predicted_tail": predicted_tail,
         "recommended_numbers": recommended_numbers,
         "coldest_zodiac_defense": coldest_zodiac
     }
 
 def advanced_analysis(history, weights):
     """
-    Performs advanced analysis based on rules, trends, and dynamic weights.
-    (已升级，包含共现矩阵分析)
+    V6 通用分析：包含 3中3 (三元闭环) 和 2中2 (共现矩阵)
+    (Tier 2 Target: Combos)
     """
     if not history:
         return None
@@ -233,7 +236,7 @@ def advanced_analysis(history, weights):
     trend_lookback = int(weights.get('trend_lookback', 10))
     if trend_lookback <= 0: trend_lookback = 10
 
-    # --- Trend Analysis ---
+    # --- 1. 基础趋势 ---
     category_trends = {cat: Counter() for cat in ALL_CATEGORIES}
     actual_lookback = min(trend_lookback, len(history))
     recent_history = history[:actual_lookback]
@@ -243,10 +246,9 @@ def advanced_analysis(history, weights):
             counts = Counter(NUM_TO_CATEGORY[cat_name].get(n) for n in numbers)
             category_trends[cat_name].update(counts)
 
-    # --- Number Scoring ---
+    # --- 2. 号码评分 ---
     number_scores = Counter()
     all_numbers = set(range(1, 50))
-    
     number_freq = Counter(int(n['number']) for r in history for n in r.get('numberList', []))
     last_seen = {n: len(history) for n in all_numbers}
     for i, record in enumerate(history):
@@ -266,16 +268,24 @@ def advanced_analysis(history, weights):
                 score = trend_counts.get(num_cat, 0)
                 number_scores[num] += score * weights.get('category_trend', 1.0)
 
-    # --- 共现矩阵分析 ---
+    # --- 3. 2中2 优化 (二元共现矩阵) ---
     pair_counts = Counter()
     for record in history:
         nums = sorted([int(n['number']) for n in record.get('numberList', [])[:-1]])
         for pair in combinations(nums, 2):
             pair_counts[pair] += 1
 
-    # --- Combination Scoring ---
+    # --- 4. 3中3 优化 (三元闭环矩阵 - V6 New) ---
+    triplet_counts = Counter()
+    for record in history:
+        nums = sorted([int(n['number']) for n in record.get('numberList', [])[:-1]])
+        for triplet in combinations(nums, 3):
+            triplet_counts[triplet] += 1
+            
+    # --- 5. 生成组合 ---
     top_20_numbers = [num for num, score in number_scores.most_common(20)]
     
+    # 生成 2中2
     combo_2_scores = Counter()
     for combo in combinations(top_20_numbers, 2):
         sorted_combo = tuple(sorted(combo))
@@ -287,14 +297,14 @@ def advanced_analysis(history, weights):
             
         co_occurrence_bonus = pair_counts.get(sorted_combo, 0) * weights.get('co_occurrence_weight', 1.0)
         score += co_occurrence_bonus
-        
         combo_2_scores[sorted_combo] = score
 
+    # 生成 3中3
     combo_3_scores = Counter()
     for combo in combinations(top_20_numbers, 3):
+        sorted_combo = tuple(sorted(combo))
         combo_sum = sum(combo)
-        if not (40 <= combo_sum <= 110):
-            continue 
+        if not (40 <= combo_sum <= 110): continue 
 
         score = sum(number_scores[n] for n in combo)
         
@@ -305,10 +315,14 @@ def advanced_analysis(history, weights):
             score *= weights.get('combo_3_color_diversity', 1.1)
         if len(elements) > 2:
             score *= weights.get('combo_3_element_diversity', 1.1)
+        
+        # V6: 三元闭环加分
+        triplet_bonus = triplet_counts.get(sorted_combo, 0) * weights.get('triplet_weight', 1.0) * 10
+        score += triplet_bonus
             
         combo_3_scores[combo] = score
 
-    # --- Zodiac Scoring ---
+    # --- 6. 结果打包 ---
     zodiac_scores_general = Counter()
     for z, nums in ZODIAC_MAP.items():
         score = sum(number_scores[n] for n in nums)

@@ -7,8 +7,60 @@
     "pageRange": "1-10",
     "description": "Hong Kong Lottery Data"
   },
-  "collectionTime": "2025-12-05 02:45:13",
+  "collectionTime": "2025-12-07 22:27:38",
   "totalRecords": [
+    {
+      "id": 20251271,
+      "lotteryTime": "2025年12月06日",
+      "lotteryType": 1,
+      "numberList": [
+        {
+          "color": 3,
+          "number": "06",
+          "shengXiao": "鼠",
+          "wuXing": "土"
+        },
+        {
+          "color": 1,
+          "number": "40",
+          "shengXiao": "虎",
+          "wuXing": "火"
+        },
+        {
+          "color": 2,
+          "number": "04",
+          "shengXiao": "虎",
+          "wuXing": "金"
+        },
+        {
+          "color": 1,
+          "number": "34",
+          "shengXiao": "猴",
+          "wuXing": "金"
+        },
+        {
+          "color": 2,
+          "number": "26",
+          "shengXiao": "龙",
+          "wuXing": "金"
+        },
+        {
+          "color": 3,
+          "number": "28",
+          "shengXiao": "虎",
+          "wuXing": "土"
+        },
+        {
+          "color": 2,
+          "number": "25",
+          "shengXiao": "蛇",
+          "wuXing": "金"
+        }
+      ],
+      "period": 127,
+      "periodStr": "127",
+      "year": 2025
+    },
     {
       "id": 20251261,
       "lotteryTime": "2025年12月02日",
@@ -5156,65 +5208,13 @@
       "period": 28,
       "periodStr": "028",
       "year": 2025
-    },
-    {
-      "id": 20250271,
-      "lotteryTime": "2025年03月11日",
-      "lotteryType": 1,
-      "numberList": [
-        {
-          "color": 3,
-          "number": "21",
-          "shengXiao": "鸡",
-          "wuXing": "水"
-        },
-        {
-          "color": 2,
-          "number": "04",
-          "shengXiao": "虎",
-          "wuXing": "金"
-        },
-        {
-          "color": 2,
-          "number": "37",
-          "shengXiao": "蛇",
-          "wuXing": "木"
-        },
-        {
-          "color": 2,
-          "number": "09",
-          "shengXiao": "鸡",
-          "wuXing": "火"
-        },
-        {
-          "color": 2,
-          "number": "14",
-          "shengXiao": "龙",
-          "wuXing": "水"
-        },
-        {
-          "color": 1,
-          "number": "01",
-          "shengXiao": "蛇",
-          "wuXing": "火"
-        },
-        {
-          "color": 1,
-          "number": "45",
-          "shengXiao": "鸡",
-          "wuXing": "木"
-        }
-      ],
-      "period": 27,
-      "periodStr": "027",
-      "year": 2025
     }
   ],
   "pages": [
     {
       "pageNum": 1,
       "data": {
-        "key": "2025-12-04 22:18:32",
+        "key": "2025-12-07 22:02:20",
         "pager": {
           "pageNum": 1,
           "pageSize": 10,
@@ -5223,6 +5223,58 @@
           "totalPageCount": 1
         },
         "recordList": [
+          {
+            "id": 20251271,
+            "lotteryTime": "2025年12月06日",
+            "lotteryType": 1,
+            "numberList": [
+              {
+                "color": 3,
+                "number": "06",
+                "shengXiao": "鼠",
+                "wuXing": "土"
+              },
+              {
+                "color": 1,
+                "number": "40",
+                "shengXiao": "虎",
+                "wuXing": "火"
+              },
+              {
+                "color": 2,
+                "number": "04",
+                "shengXiao": "虎",
+                "wuXing": "金"
+              },
+              {
+                "color": 1,
+                "number": "34",
+                "shengXiao": "猴",
+                "wuXing": "金"
+              },
+              {
+                "color": 2,
+                "number": "26",
+                "shengXiao": "龙",
+                "wuXing": "金"
+              },
+              {
+                "color": 3,
+                "number": "28",
+                "shengXiao": "虎",
+                "wuXing": "土"
+              },
+              {
+                "color": 2,
+                "number": "25",
+                "shengXiao": "蛇",
+                "wuXing": "金"
+              }
+            ],
+            "period": 127,
+            "periodStr": "127",
+            "year": 2025
+          },
           {
             "id": 20251261,
             "lotteryTime": "2025年12月02日",
@@ -5690,7 +5742,23 @@
             "period": 118,
             "periodStr": "118",
             "year": 2025
-          },
+          }
+        ],
+        "refresh": false
+      }
+    },
+    {
+      "pageNum": 2,
+      "data": {
+        "key": "2025-12-07 22:02:20",
+        "pager": {
+          "pageNum": 2,
+          "pageSize": 10,
+          "start": 11,
+          "totalCount": -1,
+          "totalPageCount": 1
+        },
+        "recordList": [
           {
             "id": 20251171,
             "lotteryTime": "2025年11月04日",
@@ -5742,23 +5810,7 @@
             "period": 117,
             "periodStr": "117",
             "year": 2025
-          }
-        ],
-        "refresh": false
-      }
-    },
-    {
-      "pageNum": 2,
-      "data": {
-        "key": "2025-12-04 22:18:32",
-        "pager": {
-          "pageNum": 2,
-          "pageSize": 10,
-          "start": 11,
-          "totalCount": -1,
-          "totalPageCount": 1
-        },
-        "recordList": [
+          },
           {
             "id": 20251161,
             "lotteryTime": "2025年10月28日",
@@ -6226,7 +6278,23 @@
             "period": 108,
             "periodStr": "108",
             "year": 2025
-          },
+          }
+        ],
+        "refresh": false
+      }
+    },
+    {
+      "pageNum": 3,
+      "data": {
+        "key": "2025-12-07 22:02:20",
+        "pager": {
+          "pageNum": 3,
+          "pageSize": 10,
+          "start": 21,
+          "totalCount": -1,
+          "totalPageCount": 1
+        },
+        "recordList": [
           {
             "id": 20251071,
             "lotteryTime": "2025年10月06日",
@@ -6278,23 +6346,7 @@
             "period": 107,
             "periodStr": "107",
             "year": 2025
-          }
-        ],
-        "refresh": false
-      }
-    },
-    {
-      "pageNum": 3,
-      "data": {
-        "key": "2025-12-04 22:18:35",
-        "pager": {
-          "pageNum": 3,
-          "pageSize": 10,
-          "start": 21,
-          "totalCount": -1,
-          "totalPageCount": 1
-        },
-        "recordList": [
+          },
           {
             "id": 20251061,
             "lotteryTime": "2025年09月30日",
@@ -6762,7 +6814,23 @@
             "period": 98,
             "periodStr": "098",
             "year": 2025
-          },
+          }
+        ],
+        "refresh": false
+      }
+    },
+    {
+      "pageNum": 4,
+      "data": {
+        "key": "2025-12-07 22:02:21",
+        "pager": {
+          "pageNum": 4,
+          "pageSize": 10,
+          "start": 31,
+          "totalCount": -1,
+          "totalPageCount": 1
+        },
+        "recordList": [
           {
             "id": 20250971,
             "lotteryTime": "2025年09月06日",
@@ -6814,23 +6882,7 @@
             "period": 97,
             "periodStr": "097",
             "year": 2025
-          }
-        ],
-        "refresh": false
-      }
-    },
-    {
-      "pageNum": 4,
-      "data": {
-        "key": "2025-12-04 22:18:32",
-        "pager": {
-          "pageNum": 4,
-          "pageSize": 10,
-          "start": 31,
-          "totalCount": -1,
-          "totalPageCount": 1
-        },
-        "recordList": [
+          },
           {
             "id": 20250961,
             "lotteryTime": "2025年09月02日",
@@ -7298,7 +7350,23 @@
             "period": 88,
             "periodStr": "088",
             "year": 2025
-          },
+          }
+        ],
+        "refresh": false
+      }
+    },
+    {
+      "pageNum": 5,
+      "data": {
+        "key": "2025-12-07 22:02:21",
+        "pager": {
+          "pageNum": 5,
+          "pageSize": 10,
+          "start": 41,
+          "totalCount": -1,
+          "totalPageCount": 1
+        },
+        "recordList": [
           {
             "id": 20250871,
             "lotteryTime": "2025年08月12日",
@@ -7350,23 +7418,7 @@
             "period": 87,
             "periodStr": "087",
             "year": 2025
-          }
-        ],
-        "refresh": false
-      }
-    },
-    {
-      "pageNum": 5,
-      "data": {
-        "key": "2025-12-04 22:18:34",
-        "pager": {
-          "pageNum": 5,
-          "pageSize": 10,
-          "start": 41,
-          "totalCount": -1,
-          "totalPageCount": 1
-        },
-        "recordList": [
+          },
           {
             "id": 20250861,
             "lotteryTime": "2025年08月09日",
@@ -7834,7 +7886,23 @@
             "period": 78,
             "periodStr": "078",
             "year": 2025
-          },
+          }
+        ],
+        "refresh": false
+      }
+    },
+    {
+      "pageNum": 6,
+      "data": {
+        "key": "2025-12-07 22:02:22",
+        "pager": {
+          "pageNum": 6,
+          "pageSize": 10,
+          "start": 51,
+          "totalCount": -1,
+          "totalPageCount": 1
+        },
+        "recordList": [
           {
             "id": 20250771,
             "lotteryTime": "2025年07月15日",
@@ -7886,23 +7954,7 @@
             "period": 77,
             "periodStr": "077",
             "year": 2025
-          }
-        ],
-        "refresh": false
-      }
-    },
-    {
-      "pageNum": 6,
-      "data": {
-        "key": "2025-12-04 22:18:32",
-        "pager": {
-          "pageNum": 6,
-          "pageSize": 10,
-          "start": 51,
-          "totalCount": -1,
-          "totalPageCount": 1
-        },
-        "recordList": [
+          },
           {
             "id": 20250761,
             "lotteryTime": "2025年07月12日",
@@ -8370,7 +8422,23 @@
             "period": 68,
             "periodStr": "068",
             "year": 2025
-          },
+          }
+        ],
+        "refresh": false
+      }
+    },
+    {
+      "pageNum": 7,
+      "data": {
+        "key": "2025-12-07 22:02:23",
+        "pager": {
+          "pageNum": 7,
+          "pageSize": 10,
+          "start": 61,
+          "totalCount": -1,
+          "totalPageCount": 1
+        },
+        "recordList": [
           {
             "id": 20250671,
             "lotteryTime": "2025年06月19日",
@@ -8422,23 +8490,7 @@
             "period": 67,
             "periodStr": "067",
             "year": 2025
-          }
-        ],
-        "refresh": false
-      }
-    },
-    {
-      "pageNum": 7,
-      "data": {
-        "key": "2025-12-04 22:18:36",
-        "pager": {
-          "pageNum": 7,
-          "pageSize": 10,
-          "start": 61,
-          "totalCount": -1,
-          "totalPageCount": 1
-        },
-        "recordList": [
+          },
           {
             "id": 20250661,
             "lotteryTime": "2025年06月17日",
@@ -8906,7 +8958,23 @@
             "period": 58,
             "periodStr": "058",
             "year": 2025
-          },
+          }
+        ],
+        "refresh": false
+      }
+    },
+    {
+      "pageNum": 8,
+      "data": {
+        "key": "2025-12-07 22:02:27",
+        "pager": {
+          "pageNum": 8,
+          "pageSize": 10,
+          "start": 71,
+          "totalCount": -1,
+          "totalPageCount": 1
+        },
+        "recordList": [
           {
             "id": 20250571,
             "lotteryTime": "2025年05月22日",
@@ -8958,23 +9026,7 @@
             "period": 57,
             "periodStr": "057",
             "year": 2025
-          }
-        ],
-        "refresh": false
-      }
-    },
-    {
-      "pageNum": 8,
-      "data": {
-        "key": "2025-12-04 22:18:45",
-        "pager": {
-          "pageNum": 8,
-          "pageSize": 10,
-          "start": 71,
-          "totalCount": -1,
-          "totalPageCount": 1
-        },
-        "recordList": [
+          },
           {
             "id": 20250561,
             "lotteryTime": "2025年05月20日",
@@ -9442,7 +9494,23 @@
             "period": 48,
             "periodStr": "048",
             "year": 2025
-          },
+          }
+        ],
+        "refresh": false
+      }
+    },
+    {
+      "pageNum": 9,
+      "data": {
+        "key": "2025-12-07 22:02:32",
+        "pager": {
+          "pageNum": 9,
+          "pageSize": 10,
+          "start": 81,
+          "totalCount": -1,
+          "totalPageCount": 1
+        },
+        "recordList": [
           {
             "id": 20250471,
             "lotteryTime": "2025年04月29日",
@@ -9494,23 +9562,7 @@
             "period": 47,
             "periodStr": "047",
             "year": 2025
-          }
-        ],
-        "refresh": false
-      }
-    },
-    {
-      "pageNum": 9,
-      "data": {
-        "key": "2025-12-04 22:18:33",
-        "pager": {
-          "pageNum": 9,
-          "pageSize": 10,
-          "start": 81,
-          "totalCount": -1,
-          "totalPageCount": 1
-        },
-        "recordList": [
+          },
           {
             "id": 20250461,
             "lotteryTime": "2025年04月26日",
@@ -9978,7 +10030,23 @@
             "period": 38,
             "periodStr": "038",
             "year": 2025
-          },
+          }
+        ],
+        "refresh": false
+      }
+    },
+    {
+      "pageNum": 10,
+      "data": {
+        "key": "2025-12-07 22:02:22",
+        "pager": {
+          "pageNum": 10,
+          "pageSize": 10,
+          "start": 91,
+          "totalCount": -1,
+          "totalPageCount": 1
+        },
+        "recordList": [
           {
             "id": 20250371,
             "lotteryTime": "2025年04月03日",
@@ -10030,23 +10098,7 @@
             "period": 37,
             "periodStr": "037",
             "year": 2025
-          }
-        ],
-        "refresh": false
-      }
-    },
-    {
-      "pageNum": 10,
-      "data": {
-        "key": "2025-12-04 22:18:37",
-        "pager": {
-          "pageNum": 10,
-          "pageSize": 10,
-          "start": 91,
-          "totalCount": -1,
-          "totalPageCount": 1
-        },
-        "recordList": [
+          },
           {
             "id": 20250361,
             "lotteryTime": "2025年04月01日",
@@ -10513,58 +10565,6 @@
             ],
             "period": 28,
             "periodStr": "028",
-            "year": 2025
-          },
-          {
-            "id": 20250271,
-            "lotteryTime": "2025年03月11日",
-            "lotteryType": 1,
-            "numberList": [
-              {
-                "color": 3,
-                "number": "21",
-                "shengXiao": "鸡",
-                "wuXing": "水"
-              },
-              {
-                "color": 2,
-                "number": "04",
-                "shengXiao": "虎",
-                "wuXing": "金"
-              },
-              {
-                "color": 2,
-                "number": "37",
-                "shengXiao": "蛇",
-                "wuXing": "木"
-              },
-              {
-                "color": 2,
-                "number": "09",
-                "shengXiao": "鸡",
-                "wuXing": "火"
-              },
-              {
-                "color": 2,
-                "number": "14",
-                "shengXiao": "龙",
-                "wuXing": "水"
-              },
-              {
-                "color": 1,
-                "number": "01",
-                "shengXiao": "蛇",
-                "wuXing": "火"
-              },
-              {
-                "color": 1,
-                "number": "45",
-                "shengXiao": "鸡",
-                "wuXing": "木"
-              }
-            ],
-            "period": 27,
-            "periodStr": "027",
             "year": 2025
           }
         ],

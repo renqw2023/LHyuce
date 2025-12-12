@@ -1,0 +1,362 @@
+[
+  {
+    "generation": 1,
+    "best_fitness": 15300,
+    "average_fitness": 11343.75,
+    "global_best": 15300
+  },
+  {
+    "generation": 2,
+    "best_fitness": 15900,
+    "average_fitness": 12758.125,
+    "global_best": 15900
+  },
+  {
+    "generation": 3,
+    "best_fitness": 17950,
+    "average_fitness": 13718.75,
+    "global_best": 17950
+  },
+  {
+    "generation": 4,
+    "best_fitness": 17400,
+    "average_fitness": 14201.25,
+    "global_best": 17950
+  },
+  {
+    "generation": 5,
+    "best_fitness": 19350,
+    "average_fitness": 14737.5,
+    "global_best": 19350
+  },
+  {
+    "generation": 6,
+    "best_fitness": 19350,
+    "average_fitness": 14938.125,
+    "global_best": 19350
+  },
+  {
+    "generation": 7,
+    "best_fitness": 19350,
+    "average_fitness": 15170.0,
+    "global_best": 19350
+  },
+  {
+    "generation": 8,
+    "best_fitness": 19350,
+    "average_fitness": 15390.0,
+    "global_best": 19350
+  },
+  {
+    "generation": 9,
+    "best_fitness": 19350,
+    "average_fitness": 15261.875,
+    "global_best": 19350
+  },
+  {
+    "generation": 10,
+    "best_fitness": 19250,
+    "average_fitness": 15275.0,
+    "global_best": 19350
+  },
+  {
+    "generation": 11,
+    "best_fitness": 19250,
+    "average_fitness": 15044.375,
+    "global_best": 19350
+  },
+  {
+    "generation": 12,
+    "best_fitness": 19250,
+    "average_fitness": 15207.5,
+    "global_best": 19350
+  },
+  {
+    "generation": 13,
+    "best_fitness": 19250,
+    "average_fitness": 14654.375,
+    "global_best": 19350
+  },
+  {
+    "generation": 14,
+    "best_fitness": 19800,
+    "average_fitness": 15032.5,
+    "global_best": 19800
+  },
+  {
+    "generation": 15,
+    "best_fitness": 19250,
+    "average_fitness": 15058.125,
+    "global_best": 19800
+  },
+  {
+    "generation": 16,
+    "best_fitness": 20150,
+    "average_fitness": 14506.875,
+    "global_best": 20150
+  },
+  {
+    "generation": 17,
+    "best_fitness": 20150,
+    "average_fitness": 15446.875,
+    "global_best": 20150
+  },
+  {
+    "generation": 18,
+    "best_fitness": 20000,
+    "average_fitness": 15530.0,
+    "global_best": 20150
+  },
+  {
+    "generation": 19,
+    "best_fitness": 20000,
+    "average_fitness": 15865.625,
+    "global_best": 20150
+  },
+  {
+    "generation": 20,
+    "best_fitness": 19900,
+    "average_fitness": 15555.0,
+    "global_best": 20150
+  },
+  {
+    "generation": 21,
+    "best_fitness": 20100,
+    "average_fitness": 14970.0,
+    "global_best": 20150
+  },
+  {
+    "generation": 22,
+    "best_fitness": 20250,
+    "average_fitness": 15408.125,
+    "global_best": 20250
+  },
+  {
+    "generation": 23,
+    "best_fitness": 20250,
+    "average_fitness": 15567.5,
+    "global_best": 20250
+  },
+  {
+    "generation": 24,
+    "best_fitness": 20250,
+    "average_fitness": 15830.625,
+    "global_best": 20250
+  },
+  {
+    "generation": 25,
+    "best_fitness": 20250,
+    "average_fitness": 15778.75,
+    "global_best": 20250
+  },
+  {
+    "generation": 26,
+    "best_fitness": 20250,
+    "average_fitness": 15666.25,
+    "global_best": 20250
+  },
+  {
+    "generation": 27,
+    "best_fitness": 20250,
+    "average_fitness": 16061.25,
+    "global_best": 20250
+  },
+  {
+    "generation": 28,
+    "best_fitness": 20250,
+    "average_fitness": 15395.625,
+    "global_best": 20250
+  },
+  {
+    "generation": 29,
+    "best_fitness": 20250,
+    "average_fitness": 15527.5,
+    "global_best": 20250
+  },
+  {
+    "generation": 30,
+    "best_fitness": 20150,
+    "average_fitness": 15384.375,
+    "global_best": 20250
+  },
+  {
+    "generation": 31,
+    "best_fitness": 19700,
+    "average_fitness": 15685.0,
+    "global_best": 20250
+  },
+  {
+    "generation": 32,
+    "best_fitness": 20250,
+    "average_fitness": 15826.25,
+    "global_best": 20250
+  },
+  {
+    "generation": 33,
+    "best_fitness": 20150,
+    "average_fitness": 15428.75,
+    "global_best": 20250
+  },
+  {
+    "generation": 34,
+    "best_fitness": 20150,
+    "average_fitness": 15765.0,
+    "global_best": 20250
+  },
+  {
+    "generation": 35,
+    "best_fitness": 20150,
+    "average_fitness": 16259.375,
+    "global_best": 20250
+  },
+  {
+    "generation": 36,
+    "best_fitness": 20150,
+    "average_fitness": 15602.5,
+    "global_best": 20250
+  },
+  {
+    "generation": 37,
+    "best_fitness": 20250,
+    "average_fitness": 15226.25,
+    "global_best": 20250
+  },
+  {
+    "generation": 38,
+    "best_fitness": 20150,
+    "average_fitness": 15684.375,
+    "global_best": 20250
+  },
+  {
+    "generation": 39,
+    "best_fitness": 20150,
+    "average_fitness": 15091.875,
+    "global_best": 20250
+  },
+  {
+    "generation": 40,
+    "best_fitness": 20150,
+    "average_fitness": 15777.5,
+    "global_best": 20250
+  },
+  {
+    "generation": 41,
+    "best_fitness": 20150,
+    "average_fitness": 15883.75,
+    "global_best": 20250
+  },
+  {
+    "generation": 42,
+    "best_fitness": 20150,
+    "average_fitness": 15943.75,
+    "global_best": 20250
+  },
+  {
+    "generation": 43,
+    "best_fitness": 20150,
+    "average_fitness": 16256.875,
+    "global_best": 20250
+  },
+  {
+    "generation": 44,
+    "best_fitness": 20150,
+    "average_fitness": 15583.75,
+    "global_best": 20250
+  },
+  {
+    "generation": 45,
+    "best_fitness": 20150,
+    "average_fitness": 16118.125,
+    "global_best": 20250
+  },
+  {
+    "generation": 46,
+    "best_fitness": 19600,
+    "average_fitness": 15593.75,
+    "global_best": 20250
+  },
+  {
+    "generation": 47,
+    "best_fitness": 19600,
+    "average_fitness": 15827.5,
+    "global_best": 20250
+  },
+  {
+    "generation": 48,
+    "best_fitness": 20150,
+    "average_fitness": 15821.875,
+    "global_best": 20250
+  },
+  {
+    "generation": 49,
+    "best_fitness": 20150,
+    "average_fitness": 15976.25,
+    "global_best": 20250
+  },
+  {
+    "generation": 50,
+    "best_fitness": 20250,
+    "average_fitness": 16368.75,
+    "global_best": 20250
+  },
+  {
+    "generation": 51,
+    "best_fitness": 20150,
+    "average_fitness": 15385.0,
+    "global_best": 20250
+  },
+  {
+    "generation": 52,
+    "best_fitness": 20250,
+    "average_fitness": 15988.125,
+    "global_best": 20250
+  },
+  {
+    "generation": 53,
+    "best_fitness": 20450,
+    "average_fitness": 16420.625,
+    "global_best": 20450
+  },
+  {
+    "generation": 54,
+    "best_fitness": 20550,
+    "average_fitness": 15723.75,
+    "global_best": 20550
+  },
+  {
+    "generation": 55,
+    "best_fitness": 20450,
+    "average_fitness": 15266.875,
+    "global_best": 20550
+  },
+  {
+    "generation": 56,
+    "best_fitness": 20450,
+    "average_fitness": 15813.125,
+    "global_best": 20550
+  },
+  {
+    "generation": 57,
+    "best_fitness": 20550,
+    "average_fitness": 15824.375,
+    "global_best": 20550
+  },
+  {
+    "generation": 58,
+    "best_fitness": 21000,
+    "average_fitness": 15954.375,
+    "global_best": 21000
+  },
+  {
+    "generation": 59,
+    "best_fitness": 20550,
+    "average_fitness": 16067.5,
+    "global_best": 21000
+  },
+  {
+    "generation": 60,
+    "best_fitness": 20550,
+    "average_fitness": 15800.0,
+    "global_best": 21000
+  }
+]

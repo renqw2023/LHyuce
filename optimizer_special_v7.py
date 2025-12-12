@@ -1,30 +1,31 @@
 import random
 import json
-import backtester
+import backtester_v7
 import operator
 
 # --- GENETIC ALGORITHM PARAMETERS ---
-POPULATION_SIZE = 60       # 种群大小
-N_GENERATIONS = 50         # 进化代数
-MUTATION_RATE = 0.2        # 变异率
-TOURNAMENT_SIZE = 5        # 锦标赛大小
+POPULATION_SIZE = 80       # 增加种群大小以提高搜索空间
+N_GENERATIONS = 60         # 增加进化代数
+MUTATION_RATE = 0.2
+TOURNAMENT_SIZE = 6
 
-# --- V6 参数空间：全域共振与多维狙击 ---
+# --- V7 参数空间：8生肖优化 ---
 PARAMETER_SPACE = {
-    'special_hot': (0.0, 4.0),          # 热度权重
-    'special_gap': (0.0, 4.0),          # 遗漏权重
-    'special_zodiac': (0.0, 8.0),       # 生肖权重 (极大增强，保证第一梯队范围)
-    'special_color_weight': (0.0, 5.0), # 波色权重
-    'special_tail_weight': (0.0, 5.0),  # 尾数权重
-    'special_cold_protect': (0.0, 6.0), # 防守权重
-    'special_lookback': (5, 80),        # 动态回顾期
+    'special_hot': (0.0, 5.0),              # 热度权重
+    'special_gap': (0.0, 5.0),              # 遗漏权重
+    'special_zodiac': (0.0, 10.0),          # 生肖权重（提升上限）
+    'special_color_weight': (0.0, 6.0),     # 波色权重
+    'special_tail_weight': (0.0, 6.0),      # 尾数权重
+    'special_cold_protect': (0.0, 8.0),     # 防守权重（提升）
+    'special_lookback': (5, 100),           # 动态回顾期（扩大范围）
     
-    # --- V6 新增基因 ---
-    'special_resonance': (1.0, 3.0),    # 共振系数：当生肖、波色、尾数同时命中时的倍率
-    'special_tail_continuity': (0.0, 4.0) # 尾数惯性：上期尾数对下期尾数的影响
+    # V7 新增基因
+    'special_resonance': (1.0, 4.0),        # 共振系数
+    'special_cycle_weight': (0.0, 5.0),     # 周期性权重
+    'special_element_weight': (0.0, 5.0),   # 五行权重
+    'special_balance_weight': (0.0, 4.0),   # 平衡性权重
+    'special_diversity_bonus': (0.0, 3.0)   # 多样性奖励
 }
-
-# --- GENETIC ALGORITHM IMPLEMENTATION ---
 
 def create_individual():
     """创建一个包含随机权重的个体"""
@@ -40,9 +41,11 @@ def create_initial_population():
 def calculate_population_fitness(population, lottery_type, backtest_range):
     """计算种群中每个个体的适应度"""
     population_with_fitness = []
-    print(f"正在评估特码种群适应度 (共 {len(population)} 个个体)...")
+    print(f"正在评估V7特码种群适应度 (共 {len(population)} 个个体)...")
     for i, individual in enumerate(population):
-        fitness = backtester.run_special_backtest(lottery_type, individual, backtest_range)
+        if (i + 1) % 10 == 0:
+            print(f"  进度: {i + 1}/{len(population)}")
+        fitness = backtester_v7.run_special_backtest_v7(lottery_type, individual, backtest_range)
         population_with_fitness.append((individual, fitness))
     return population_with_fitness
 
@@ -76,9 +79,10 @@ def mutate(individual):
     return individual
 
 def run_evolution(lottery_type, backtest_range):
-    """运行特码策略的遗传算法优化"""
-    print(f"--- V6: 开始为 {lottery_type.upper()} 特码数据运行共振优化 ---")
+    """运行V7特码策略的遗传算法优化"""
+    print(f"--- V7: 开始为 {lottery_type.upper()} 特码数据运行8生肖优化 ---")
     print(f"种群大小: {POPULATION_SIZE}, 进化代数: {N_GENERATIONS}, 变异率: {MUTATION_RATE}")
+    print(f"目标: 8生肖覆盖，理论准确率67%+，实际目标70%+")
 
     population = create_initial_population()
     overall_best_individual = None
@@ -87,7 +91,7 @@ def run_evolution(lottery_type, backtest_range):
     fitness_log = []
 
     for gen in range(N_GENERATIONS):
-        print(f"\n--- 第 {gen + 1}/{N_GENERATIONS} 代特码进化 ---")
+        print(f"\n--- 第 {gen + 1}/{N_GENERATIONS} 代V7特码进化 ---")
         
         population_with_fitness = calculate_population_fitness(population, lottery_type, backtest_range)
         
@@ -96,7 +100,7 @@ def run_evolution(lottery_type, backtest_range):
         if current_best_fitness > overall_best_fitness:
             overall_best_fitness = current_best_fitness
             overall_best_individual = current_best_individual
-            print(f"发现新的全局最优特码策略！适应度分数: {overall_best_fitness}")
+            print(f"★ 发现新的全局最优V7特码策略！适应度分数: {overall_best_fitness}")
 
         new_population = []
         for _ in range(POPULATION_SIZE):
@@ -109,39 +113,52 @@ def run_evolution(lottery_type, backtest_range):
         population = new_population
         
         avg_fitness = sum(fit for ind, fit in population_with_fitness) / POPULATION_SIZE
-        print(f"第 {gen + 1} 代特码总结: 平均适应度 = {avg_fitness:.2f}, 本代最高 = {current_best_fitness:.2f}, 全局最高 = {overall_best_fitness:.2f}")
+        print(f"第 {gen + 1} 代总结: 平均={avg_fitness:.2f}, 本代最高={current_best_fitness:.2f}, 全局最高={overall_best_fitness:.2f}")
         
-        fitness_log.append({'generation': gen + 1, 'best_fitness': current_best_fitness, 'average_fitness': avg_fitness})
+        fitness_log.append({
+            'generation': gen + 1, 
+            'best_fitness': current_best_fitness, 
+            'average_fitness': avg_fitness,
+            'global_best': overall_best_fitness
+        })
 
-    print("\n--- 特码进化完成 ---")
+    print("\n" + "="*60)
+    print("V7特码进化完成")
+    print("="*60)
+    
     if overall_best_individual:
-        print(f"找到的“天选特码策略”获得了 {overall_best_fitness:.2f} 的最终适应度分数。")
-        print("最优权重参数为:")
+        print(f"找到的天选V7特码策略获得了 {overall_best_fitness:.2f} 的最终适应度分数。")
+        print("\n最优权重参数为:")
         for key, value in overall_best_individual.items():
             print(f"  - {key}: {value:.4f}")
         
-        output_filename = f'best_special_strategy_{lottery_type}.json' 
+        output_filename = f'best_special_strategy_{lottery_type}_v7.json' 
         try:
             with open(output_filename, 'w', encoding='utf-8') as f:
                 json.dump(overall_best_individual, f, indent=2)
-            print(f"\n最优特码策略已保存至: {output_filename}")
+            print(f"\n[OK] 最优V7特码策略已保存至: {output_filename}")
         except Exception as e:
-            print(f"错误: 保存最优特码策略失败。 {e}")
+            print(f"错误: 保存失败 {e}")
             
-        log_filename = f'{lottery_type}_special_optimizer_log.json' 
+        log_filename = f'{lottery_type}_special_optimizer_log_v7.json' 
         try:
             with open(log_filename, 'w', encoding='utf-8') as f:
                 json.dump(fitness_log, f, indent=2)
-            print(f"特码优化过程日志已保存至: {log_filename}")
+            print(f"[OK] V7优化日志已保存至: {log_filename}")
         except Exception as e:
-            print(f"错误: 保存特码优化日志失败。 {e}")
+            print(f"错误: 保存日志失败 {e}")
             
     else:
-        print("未能找到任何有效特码策略。")
+        print("未能找到任何有效V7特码策略。")
 
 if __name__ == "__main__":
-    print("将分别为香港和澳门数据优化特码策略...")
-    run_evolution('hk', backtest_range=50)
-    print("\n" + "="*50 + "\n")
-    run_evolution('macau', backtest_range=50)
-    print("\n所有特码优化任务完成。")
+    print("="*60)
+    print("V7 特码优化器 - 8生肖智能覆盖")
+    print("="*60)
+    print("将分别为香港和澳门数据优化V7特码策略...")
+    print("\n正在优化澳门数据...")
+    run_evolution('macau', backtest_range=80)
+    print("\n" + "="*60 + "\n")
+    print("正在优化香港数据...")
+    run_evolution('hk', backtest_range=80)
+    print("\n所有V7特码优化任务完成。")

@@ -1,10 +1,11 @@
 {
-  "trend_lookback": 8.619845308886244,
-  "hot_score": 0.6764482689505613,
-  "cold_score": 1.7841577854797739,
-  "category_trend": 0.5258988342454451,
-  "combo_2_diversity": 1.3644636384317321,
-  "combo_3_color_diversity": 1.1658580740103244,
-  "combo_3_element_diversity": 1.0701012193988397,
-  "co_occurrence_weight": 3.5253862895963177
+  "trend_lookback": 29.977971186024302,
+  "hot_score": 1.8895289088316347,
+  "cold_score": 0.42621896675411564,
+  "category_trend": 1.3458869200756411,
+  "combo_2_diversity": 1.4254135266792194,
+  "combo_3_color_diversity": 1.3723031072017648,
+  "combo_3_element_diversity": 1.0118584181036976,
+  "co_occurrence_weight": 2.6480453726118265,
+  "triplet_weight": 2.688561273544802
 }

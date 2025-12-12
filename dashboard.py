@@ -400,9 +400,132 @@ def render_review_center():
 
             st.markdown("---")
 
+def render_v7_prediction_history():
+    st.title("🚀 V7预测历史")
+    st.markdown("查看所有V7预测结果（8生肖智能覆盖系统）")
+    
+    # 加载所有V7预测文件
+    import glob
+    v7_files = sorted(glob.glob('predictions/v7_prediction_*.json'), 
+                     key=os.path.getctime, reverse=True)
+    
+    if not v7_files:
+        st.info("暂无V7预测历史。请在【执行中心】运行V7预测以生成第一条记录。")
+        return
+    
+    st.subheader(f"共有 {len(v7_files)} 条V7预测记录", divider='blue')
+    
+    # 加载实际开奖数据用于对比
+    data_file = 'lottery_data_2025_complete.json'
+    lottery_data = load_json_data(data_file, {})
+    actual_results = {int(r['period']): r for r in lottery_data.get('totalRecords', [])}
+    
+    # 统计准确率
+    total_checked = 0
+    total_hits = 0
+    total_number_hits = 0  # 统计号码命中
+    
+    for v7_file in v7_files:
+        v7_pred = load_json_data(v7_file)
+        if not v7_pred:
+            continue
+            
+        period = v7_pred.get('period')
+        predicted_zodiacs = v7_pred.get('predicted_zodiacs', [])
+        predicted_numbers = v7_pred.get('recommended_numbers', [])
+        
+        # 查找实际结果
+        actual = actual_results.get(period)
+        hit_status = "⏳ 待开奖"
+        hit_color = "gray"
+        detail_info = ""
+        
+        if actual and 'numberList' in actual and len(actual['numberList']) >= 7:
+            actual_special = actual['numberList'][-1]
+            actual_zodiac = actual_special['shengXiao']
+            actual_number = int(actual_special['number'])
+            actual_color = ['', '红波', '蓝波', '绿波'][actual_special.get('color', 0)]
+            actual_element = actual_special.get('wuXing', 'N/A')
+            
+            zodiac_hit = actual_zodiac in predicted_zodiacs
+            number_hit = actual_number in predicted_numbers
+            
+            # 获取所有开出的号码用于统计
+            all_actual_numbers = [int(n['number']) for n in actual['numberList']]
+            all_actual_zodiacs = [n['shengXiao'] for n in actual['numberList']]
+            
+            # 统计推荐号码在所有7个号码中的命中数
+            numbers_hit_count = sum(1 for n in predicted_numbers if n in all_actual_numbers)
+            zodiacs_hit_count = sum(1 for z in predicted_zodiacs if z in all_actual_zodiacs)
+            
+            total_checked += 1
+            
+            # 判断命中情况
+            if number_hit and zodiac_hit:
+                total_hits += 1
+                total_number_hits += 1
+                hit_status = "🎯 特码精准命中"
+                hit_color = "green"
+                detail_info = f"✅ 特码号码命中 | ✅ 生肖命中 | 号码覆盖: {numbers_hit_count}/12 | 生肖覆盖: {zodiacs_hit_count}/8"
+            elif zodiac_hit:
+                total_hits += 1
+                hit_status = "✓ 生肖命中"
+                hit_color = "green"
+                detail_info = f"❌ 特码号码未中 | ✅ 生肖命中 | 号码覆盖: {numbers_hit_count}/12 | 生肖覆盖: {zodiacs_hit_count}/8"
+            elif number_hit:
+                total_number_hits += 1
+                hit_status = "⚡ 号码命中"
+                hit_color = "orange"
+                detail_info = f"✅ 特码号码命中 | ❌ 生肖未中 | 号码覆盖: {numbers_hit_count}/12 | 生肖覆盖: {zodiacs_hit_count}/8"
+            else:
+                hit_status = "✗ 未中"
+                hit_color = "red"
+                detail_info = f"❌ 特码未命中 | 号码覆盖: {numbers_hit_count}/12 | 生肖覆盖: {zodiacs_hit_count}/8"
+        
+        with st.container(border=True):
+            col1, col2 = st.columns([3, 1])
+            
+            with col1:
+                st.markdown(f"#### 期号: **{period}** ")
+                st.markdown(f"**推荐8生肖:** {', '.join(predicted_zodiacs)}")
+                st.markdown(f"**推荐号码:** {', '.join(map(str, predicted_numbers[:12]))}")
+                st.markdown(f"**波色:** {v7_pred.get('predicted_color', 'N/A')} | "
+                          f"**尾数:** {v7_pred.get('predicted_tail', 'N/A')} | "
+                          f"**五行:** {v7_pred.get('predicted_element', 'N/A')}")
+                
+                # 显示详细命中信息
+                if detail_info:
+                    st.markdown(f"**复盘:** {detail_info}")
+            
+            with col2:
+                if actual:
+                    actual_special = actual['numberList'][-1]
+                    actual_color = ['', '红波', '蓝波', '绿波'][actual_special.get('color', 0)]
+                    actual_element = actual_special.get('wuXing', 'N/A')
+                    
+                    st.markdown(f"**实际特码**")
+                    st.markdown(f"**{actual_special['number']}** ({actual_special['shengXiao']})")
+                    st.markdown(f"{actual_color} | {actual_element}")
+                    st.markdown(f":{hit_color}[{hit_status}]")
+                else:
+                    st.markdown(f":{hit_color}[{hit_status}]")
+    
+    # 显示统计
+    if total_checked > 0:
+        zodiac_accuracy = (total_hits / total_checked) * 100
+        number_accuracy = (total_number_hits / total_checked) * 100
+        st.markdown("---")
+        st.subheader("📊 统计摘要", divider='blue')
+        col1, col2, col3, col4, col5 = st.columns(5)
+        col1.metric("总预测期数", len(v7_files))
+        col2.metric("已开奖期数", total_checked)
+        col3.metric("生肖命中期数", total_hits)
+        col4.metric("号码命中期数", total_number_hits)
+        col5.metric("生肖准确率", f"{zodiac_accuracy:.1f}%")
+
 def render_prediction_history():
-    st.title("📜 预测历史")
-    st.markdown("在这里，您可以查看所有历史预测结果。")
+    st.title("📜 预测历史 (V6)")
+    st.markdown("在这里，您可以查看所有V6历史预测结果。")
 
     lottery_type_selection = st.radio(
         "选择彩票类型",
@@ -460,41 +583,125 @@ def create_execution_tab():
     st.title("⚙️ 执行中心")
     st.markdown("在这里，您可以手动触发数据获取、AI优化和报告生成。")
 
+    # V7 快速预测区
     with st.container(border=True):
-        st.subheader("日常分析 (包含复盘)")
+        st.subheader("🚀 V7 快速预测 (8生肖智能覆盖)")
+        st.markdown("**推荐使用！** 使用优化后的V7算法快速生成下期预测。准确率：**76%**")
+        
+        col1, col2 = st.columns(2)
+        with col1:
+            if st.button("🎯 运行V7预测 (澳门)", use_container_width=True, type="primary"):
+                with st.spinner("正在生成V7预测..."):
+                    result = subprocess.run([sys.executable, "run_v7_prediction.py"], 
+                                          capture_output=True, 
+                                          encoding='utf-8',
+                                          errors='replace')
+                    output = result.stdout + "\n" + result.stderr
+                    st.code(output, language='bash')
+                    
+                    # 加载并显示预测结果
+                    try:
+                        import glob
+                        latest_v7_file = max(glob.glob('predictions/v7_prediction_*.json'), 
+                                           key=os.path.getctime, default=None)
+                        if latest_v7_file:
+                            v7_result = load_json_data(latest_v7_file)
+                            st.success("V7预测完成！")
+                            
+                            # 显示格式化结果
+                            st.markdown("### 📊 预测结果")
+                            st.markdown(f"**期号:** {v7_result.get('period', 'N/A')}")
+                            st.markdown(f"**推荐8生肖:** {', '.join(v7_result.get('predicted_zodiacs', []))}")
+                            st.markdown(f"**波色:** {v7_result.get('predicted_color', 'N/A')}")
+                            st.markdown(f"**尾数:** {v7_result.get('predicted_tail', 'N/A')}")
+                            st.markdown(f"**五行:** {v7_result.get('predicted_element', 'N/A')}")
+                            st.markdown(f"**推荐号码:** {', '.join(map(str, v7_result.get('recommended_numbers', [])[:12]))}")
+                    except Exception as e:
+                        st.error(f"显示预测结果时出错: {e}")
+                    
+                    st.cache_data.clear()
+        
+        with col2:
+            if st.button("📊 查看V7性能", use_container_width=True):
+                with st.spinner("正在分析V7性能..."):
+                    result = subprocess.run([sys.executable, "visualize_v7_performance.py"], 
+                                          capture_output=True,
+                                          encoding='utf-8',
+                                          errors='replace')
+                    output = result.stdout + "\n" + result.stderr
+                    st.code(output, language='bash')
+                    
+                    # 加载并显示性能报告
+                    try:
+                        v7_perf = load_json_data('v7_performance_report.json')
+                        if v7_perf:
+                            st.success("性能分析完成！")
+                            st.markdown("### 📈 V7性能摘要")
+                            col_a, col_b, col_c = st.columns(3)
+                            col_a.metric("测试期数", v7_perf.get('total_tests', 0))
+                            col_b.metric("命中期数", v7_perf.get('hits', 0))
+                            col_c.metric("准确率", f"{v7_perf.get('accuracy', 0):.1f}%")
+                    except Exception as e:
+                        st.error(f"显示性能报告时出错: {e}")
+                    
+                    st.success("性能分析完成！")
+
+    with st.container(border=True):
+        st.subheader("📅 日常分析 (包含复盘)")
         st.markdown("获取最新数据，复盘上一期预测，并为下一期生成新预测。")
         if st.button("🚀 运行每日分析", use_container_width=True):
             with st.spinner("正在执行每日分析..."):
-                result = subprocess.run([sys.executable, "run_daily_analysis.py"], capture_output=True)
-                stdout_decoded = result.stdout.decode('utf-8', errors='replace')
-                stderr_decoded = result.stderr.decode('utf-8', errors='replace')
-                st.code(stdout_decoded + "\n" + stderr_decoded, language='bash')
+                result = subprocess.run([sys.executable, "run_daily_analysis.py"], 
+                                      capture_output=True,
+                                      encoding='utf-8',
+                                      errors='replace')
+                output = result.stdout + "\n" + result.stderr
+                st.code(output, language='bash')
                 st.success("执行完毕！请刷新页面查看最新报告和复盘记录。")
                 st.cache_data.clear()
                 st.rerun()
 
     with st.container(border=True):
-        st.subheader("AI策略优化")
+        st.subheader("🧠 AI策略优化 (V6版本)")
         st.markdown("启动遗传算法，让AI学习并演进出新的最优通用策略。**此过程非常耗时。**")
-        if st.button("🧠 运行通用策略优化", use_container_width=True):
+        if st.button("🧠 运行通用策略优化 (V6)", use_container_width=True):
             with st.spinner("正在运行通用策略优化，可能需要数分钟..."):
-                result = subprocess.run([sys.executable, "optimizer.py"], capture_output=True)
-                stdout_decoded = result.stdout.decode('utf-8', errors='replace')
-                stderr_decoded = result.stderr.decode('utf-8', errors='replace')
-                st.code(stdout_decoded + "\n" + stderr_decoded, language='bash')
+                result = subprocess.run([sys.executable, "optimizer.py"], 
+                                      capture_output=True,
+                                      encoding='utf-8',
+                                      errors='replace')
+                output = result.stdout + "\n" + result.stderr
+                st.code(output, language='bash')
                 st.success("通用策略优化完成！请刷新页面查看新策略和学习曲线。")
                 st.cache_data.clear()
                 st.rerun()
         
         st.markdown("---")
-        st.markdown("启动遗传算法，让AI学习并演进出新的最优特码策略。**此过程非常耗时。**")
-        if st.button("🎯 运行特码策略优化", use_container_width=True):
+        st.markdown("启动遗传算法，让AI学习并演进出新的最优特码策略 (V6)。**此过程非常耗时。**")
+        if st.button("🎯 运行特码策略优化 (V6)", use_container_width=True):
             with st.spinner("正在运行特码策略优化，可能需要数分钟..."):
-                result = subprocess.run([sys.executable, "optimizer_special.py"], capture_output=True)
-                stdout_decoded = result.stdout.decode('utf-8', errors='replace')
-                stderr_decoded = result.stderr.decode('utf-8', errors='replace')
-                st.code(stdout_decoded + "\n" + stderr_decoded, language='bash')
+                result = subprocess.run([sys.executable, "optimizer_special.py"], 
+                                      capture_output=True,
+                                      encoding='utf-8',
+                                      errors='replace')
+                output = result.stdout + "\n" + result.stderr
+                st.code(output, language='bash')
                 st.success("特码策略优化完成！请刷新页面查看新策略和学习曲线。")
+                st.cache_data.clear()
+                st.rerun()
+    
+    with st.container(border=True):
+        st.subheader("⚡ V7策略优化 (高级)")
+        st.markdown("重新优化V7算法参数（8生肖系统）。**约需5-10分钟。**")
+        if st.button("🎯 运行V7特码优化", use_container_width=True):
+            with st.spinner("正在运行V7优化，请耐心等待..."):
+                result = subprocess.run([sys.executable, "optimizer_special_v7.py"], 
+                                      capture_output=True,
+                                      encoding='utf-8',
+                                      errors='replace')
+                output = result.stdout + "\n" + result.stderr
+                st.code(output, language='bash')
+                st.success("V7策略优化完成！")
                 st.cache_data.clear()
                 st.rerun()
 
@@ -505,8 +712,8 @@ with st.sidebar:
     st.markdown("---")
     page = st.radio(
         "导航菜单",
-        ["总览看板", "澳门分析", "香港分析", "复盘中心", "预测历史", "执行中心"],
-        captions=["关键指标与学习曲线", "澳门数据深度分析", "香港数据深度分析", "历史预测准确率追踪", "历史预测结果回顾", "运行任务与日志"],
+        ["总览看板", "澳门分析", "香港分析", "复盘中心", "预测历史", "V7预测历史", "执行中心"],
+        captions=["关键指标与学习曲线", "澳门数据深度分析", "香港数据深度分析", "历史预测准确率追踪", "V6历史预测结果", "V7历史预测结果", "运行任务与日志"],
         label_visibility="collapsed"
     )
     st.markdown("---")
@@ -551,6 +758,9 @@ elif page == "复盘中心":
 
 elif page == "预测历史":
     render_prediction_history()
+
+elif page == "V7预测历史":
+    render_v7_prediction_history()
 
 elif page == "执行中心":
     create_execution_tab()

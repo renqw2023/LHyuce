@@ -123,8 +123,9 @@ def load_special_number_data(file_path='lottery_data_2025_complete.json'):
 
 def analyze_special_trend(special_history, weights):
     """
-    V6 核心算法：全域号码评分系统 + 共振效应
-    (Tier 1 Target: Special Number)
+    V7 核心算法：8生肖智能覆盖 + 多维度深度分析
+    目标：通过8个生肖实现最高准确率（理论值67%+）
+    策略：热门生肖(6) + 防守冷门(2) + 多维度交叉验证
     """
     if not special_history:
         return None
@@ -139,104 +140,183 @@ def analyze_special_trend(special_history, weights):
     w_color = weights.get('special_color_weight', 1.0)
     w_tail = weights.get('special_tail_weight', 1.0)
     w_cold_protect = weights.get('special_cold_protect', 2.0)
+    w_element = weights.get('special_element_weight', 1.0)
+    w_balance = weights.get('special_balance_weight', 1.0)
     
-    # 提取 V6 新增权重
-    w_resonance = weights.get('special_resonance', 1.5) # 共振倍率
-    w_tail_cont = weights.get('special_tail_continuity', 1.0)
+    # V7 新增权重
+    w_resonance = weights.get('special_resonance', 1.5)
+    w_cycle = weights.get('special_cycle_weight', 1.0)
+    w_diversity = weights.get('special_diversity_bonus', 1.0)
 
     recent_specials = special_history[:lookback]
 
-    # --- 1. 多维统计 ---
-    # 生肖
+    # --- 1. 多维统计增强版 ---
+    # 生肖统计
     zodiac_counts = Counter(r['shengXiao'] for r in recent_specials)
     zodiac_last_seen = {z: 100 for z in ZODIAC_MAP.keys()}
+    zodiac_streak = {z: 0 for z in ZODIAC_MAP.keys()}
+    
     for i, record in enumerate(special_history):
         z = record['shengXiao']
         if z in zodiac_last_seen and zodiac_last_seen[z] == 100:
             zodiac_last_seen[z] = i
-    coldest_zodiac = max(zodiac_last_seen, key=zodiac_last_seen.get)
+    
+    for z in ZODIAC_MAP.keys():
+        zodiac_streak[z] = zodiac_last_seen[z]
 
-    # 波色
+    # 波色统计
     color_counts = Counter(r['color'] for r in recent_specials)
     total_colors = sum(color_counts.values()) or 1
     color_weights = {c: (count / total_colors) for c, count in color_counts.items()}
-    # 找出最热波色
-    top_colors = {c for c, _ in color_counts.most_common(1)}
+    top_colors = {c for c, _ in color_counts.most_common(2)}
 
-    # 尾数
+    # 尾数统计
     tails = [r['number'] % 10 for r in recent_specials]
     tail_counts = Counter(tails)
     total_tails = sum(tail_counts.values()) or 1
     tail_weights = {t: (count / total_tails) for t, count in tail_counts.items()}
-    # 找出最热尾数
-    top_tails = {t for t, _ in tail_counts.most_common(2)}
+    top_tails = {t for t, _ in tail_counts.most_common(3)}
 
-    # --- 2. 基础评分 (生肖) ---
-    zodiac_scores = {}
-    for z in ZODIAC_MAP.keys():
-        score = zodiac_counts.get(z, 0) * w_hot
-        gap = zodiac_last_seen[z]
-        if gap > 12: score += w_gap * 2
-        elif gap == 1: score += w_gap * 0.5
-        zodiac_scores[z] = score
-    zodiac_scores[coldest_zodiac] += w_cold_protect
+    # V7 新增：五行统计
+    element_counts = Counter(r.get('wuXing', '未知') for r in recent_specials if r.get('wuXing'))
+    total_elements = sum(element_counts.values()) or 1
+    element_weights = {e: (count / total_elements) for e, count in element_counts.items()}
     
-    # 找出前4名生肖作为“共振候选区”
-    top_zodiacs_list = [z for z, _ in sorted(zodiac_scores.items(), key=lambda x: x[1], reverse=True)[:4]]
+    # V7 新增：周期性分析
+    recent_5_zodiacs = [r['shengXiao'] for r in special_history[:5]]
+    cycle_pattern = Counter(recent_5_zodiacs)
 
-    # --- 3. 全域号码评分与共振 (V6 核心) ---
+    # --- 2. 智能评分系统 (生肖层级) ---
+    zodiac_scores = {}
+    
+    for z in ZODIAC_MAP.keys():
+        score = 0.0
+        
+        # 2.1 热度评分
+        heat_score = zodiac_counts.get(z, 0) * w_hot
+        score += heat_score
+        
+        # 2.2 遗漏评分（分段加权）
+        gap = zodiac_last_seen[z]
+        if gap >= 20:
+            score += w_gap * 3.0
+        elif gap >= 12:
+            score += w_gap * 2.0
+        elif gap >= 6:
+            score += w_gap * 1.0
+        elif gap <= 2:
+            score += w_gap * 0.3
+        
+        # 2.3 周期性加分
+        if z in cycle_pattern:
+            score += cycle_pattern[z] * w_cycle
+        
+        # 2.4 平衡性加分
+        avg_count = sum(zodiac_counts.values()) / 12
+        if zodiac_counts.get(z, 0) < avg_count:
+            score += w_balance * (avg_count - zodiac_counts.get(z, 0))
+        
+        zodiac_scores[z] = score
+    
+    # --- 3. 多维度交叉验证 ---
+    for z in ZODIAC_MAP.keys():
+        z_numbers = ZODIAC_MAP[z]
+        
+        color_match = 0
+        tail_match = 0
+        element_match = 0
+        
+        for num in z_numbers:
+            c = NUM_TO_CATEGORY['波色'].get(num)
+            t = num % 10
+            e = NUM_TO_CATEGORY['五行'].get(num)
+            
+            if c in top_colors:
+                color_match += 1
+            if t in top_tails:
+                tail_match += 1
+            if e in element_weights:
+                element_match += element_weights[e]
+        
+        # 属性匹配加分
+        zodiac_scores[z] += (color_match / len(z_numbers)) * w_color * 5
+        zodiac_scores[z] += (tail_match / len(z_numbers)) * w_tail * 5
+        zodiac_scores[z] += element_match * w_element * 2
+    
+    # --- 4. 最终8生肖智能选择 ---
+    # 策略：前6名热门 + 2个防守位（遗漏最久的）
+    sorted_zodiacs = sorted(zodiac_scores.items(), key=lambda x: x[1], reverse=True)
+    
+    # 选择前6名
+    selected_8_zodiacs = sorted_zodiacs[:6]
+    
+    # 添加2个防守位
+    remaining_zodiacs = sorted_zodiacs[6:]
+    defense_candidates = sorted(remaining_zodiacs, key=lambda x: zodiac_last_seen[x[0]], reverse=True)
+    selected_8_zodiacs.extend(defense_candidates[:2])
+    
+    # --- 5. 号码推荐（基于8生肖） ---
     number_final_scores = Counter()
-
+    selected_zodiac_names = {z[0] for z in selected_8_zodiacs}
+    top_6_zodiacs = [z[0] for z in sorted_zodiacs[:6]]
+    
     for num in range(1, 50):
         z = NUM_TO_ZODIAC.get(num)
+        
+        # 只考虑8个推荐生肖中的号码
+        if z not in selected_zodiac_names:
+            continue
+            
         c = NUM_TO_CATEGORY['波色'].get(num)
         t = num % 10
+        e = NUM_TO_CATEGORY['五行'].get(num)
         
         # 基础分
         score = zodiac_scores.get(z, 0) * w_zodiac
         score += color_weights.get(c, 0) * w_color * 10
         score += tail_weights.get(t, 0) * w_tail * 10
+        score += element_weights.get(e, 0) * w_element * 5
         
-        # V6 共振检测 (Resonance Check)
+        # 共振检测
         resonance_level = 0
-        if z in top_zodiacs_list: resonance_level += 1
-        if c in top_colors: resonance_level += 1
-        if t in top_tails: resonance_level += 1
+        if z in top_6_zodiacs:
+            resonance_level += 1
+        if c in top_colors:
+            resonance_level += 1
+        if t in top_tails:
+            resonance_level += 1
         
-        # 如果发生共振 (至少2个维度命中热门)，应用共振倍率
         if resonance_level >= 2:
             score *= w_resonance
-            
+        
         number_final_scores[num] = score
-
-    # --- 结果 ---
-    recommended_numbers = [num for num, s in number_final_scores.most_common(8)]
-    top_zodiacs_raw = sorted(zodiac_scores.items(), key=lambda x: x[1], reverse=True)[:4]
     
-    # 获取最高分属性用于展示
+    # --- 结果 ---
+    recommended_numbers = [num for num, s in number_final_scores.most_common(12)]
+    
     predicted_color = color_counts.most_common(1)[0][0] if color_counts else "未知"
     predicted_tail = tail_counts.most_common(1)[0][0] if tail_counts else -1
+    predicted_element = element_counts.most_common(1)[0][0] if element_counts else "未知"
 
     return {
-        "top_zodiacs": top_zodiacs_raw,
+        "top_zodiacs": selected_8_zodiacs,
         "predicted_color": predicted_color,
         "predicted_tail": predicted_tail,
+        "predicted_element": predicted_element,
         "recommended_numbers": recommended_numbers,
-        "coldest_zodiac_defense": coldest_zodiac
+        "defense_info": {
+            "coldest_zodiacs": [z for z, gap in sorted(zodiac_last_seen.items(), key=lambda x: x[1], reverse=True)[:3]]
+        }
     }
 
 def advanced_analysis(history, weights):
-    """
-    V6 通用分析：包含 3中3 (三元闭环) 和 2中2 (共现矩阵)
-    (Tier 2 Target: Combos)
-    """
+    """V6 通用分析（保持不变）"""
     if not history:
         return None
 
     trend_lookback = int(weights.get('trend_lookback', 10))
     if trend_lookback <= 0: trend_lookback = 10
 
-    # --- 1. 基础趋势 ---
     category_trends = {cat: Counter() for cat in ALL_CATEGORIES}
     actual_lookback = min(trend_lookback, len(history))
     recent_history = history[:actual_lookback]
@@ -246,7 +326,6 @@ def advanced_analysis(history, weights):
             counts = Counter(NUM_TO_CATEGORY[cat_name].get(n) for n in numbers)
             category_trends[cat_name].update(counts)
 
-    # --- 2. 号码评分 ---
     number_scores = Counter()
     all_numbers = set(range(1, 50))
     number_freq = Counter(int(n['number']) for r in history for n in r.get('numberList', []))
@@ -268,24 +347,20 @@ def advanced_analysis(history, weights):
                 score = trend_counts.get(num_cat, 0)
                 number_scores[num] += score * weights.get('category_trend', 1.0)
 
-    # --- 3. 2中2 优化 (二元共现矩阵) ---
     pair_counts = Counter()
     for record in history:
         nums = sorted([int(n['number']) for n in record.get('numberList', [])[:-1]])
         for pair in combinations(nums, 2):
             pair_counts[pair] += 1
 
-    # --- 4. 3中3 优化 (三元闭环矩阵 - V6 New) ---
     triplet_counts = Counter()
     for record in history:
         nums = sorted([int(n['number']) for n in record.get('numberList', [])[:-1]])
         for triplet in combinations(nums, 3):
             triplet_counts[triplet] += 1
             
-    # --- 5. 生成组合 ---
     top_20_numbers = [num for num, score in number_scores.most_common(20)]
     
-    # 生成 2中2
     combo_2_scores = Counter()
     for combo in combinations(top_20_numbers, 2):
         sorted_combo = tuple(sorted(combo))
@@ -299,7 +374,6 @@ def advanced_analysis(history, weights):
         score += co_occurrence_bonus
         combo_2_scores[sorted_combo] = score
 
-    # 生成 3中3
     combo_3_scores = Counter()
     for combo in combinations(top_20_numbers, 3):
         sorted_combo = tuple(sorted(combo))
@@ -316,13 +390,11 @@ def advanced_analysis(history, weights):
         if len(elements) > 2:
             score *= weights.get('combo_3_element_diversity', 1.1)
         
-        # V6: 三元闭环加分
         triplet_bonus = triplet_counts.get(sorted_combo, 0) * weights.get('triplet_weight', 1.0) * 10
         score += triplet_bonus
             
         combo_3_scores[combo] = score
 
-    # --- 6. 结果打包 ---
     zodiac_scores_general = Counter()
     for z, nums in ZODIAC_MAP.items():
         score = sum(number_scores[n] for n in nums)
@@ -341,12 +413,9 @@ def advanced_analysis(history, weights):
 
 if __name__ == "__main__":
     import argparse
-    import os
-
-    parser = argparse.ArgumentParser(description="Run advanced analysis for Macau lottery.")
-    parser.add_argument('--period', type=int, required=True, help='The lottery period to generate a prediction for.')
-    parser.add_argument('--prediction_type', type=str, default='general', choices=['general', 'special'],
-                        help='Type of prediction: "general" for all 7 numbers, "special" for the 7th number only.')
+    parser = argparse.ArgumentParser(description="Run V7 advanced analysis for lottery.")
+    parser.add_argument('--period', type=int, required=True)
+    parser.add_argument('--prediction_type', type=str, default='special', choices=['general', 'special'])
     args = parser.parse_args()
     
     prediction_period = args.period
@@ -355,72 +424,23 @@ if __name__ == "__main__":
     RAW_PREDICTION_DIR = 'predictions'
     os.makedirs(RAW_PREDICTION_DIR, exist_ok=True)
 
-    if prediction_type == 'general':
-        STRATEGY_FILE = 'best_strategy_macau.json'
-        FORMATTED_OUTPUT_FILE = 'macau_analysis_results.json'
-        PREDICTION_HISTORY_FILE = 'macau_prediction_history.json'
-        raw_prediction_filename = os.path.join(RAW_PREDICTION_DIR, f'macau_prediction_for_{prediction_period}.json')
+    if prediction_type == 'special':
+        STRATEGY_FILE = 'best_special_strategy_macau_v7.json'
+        FORMATTED_OUTPUT_FILE = 'macau_special_analysis_results_v7.json'
+        PREDICTION_HISTORY_FILE = 'macau_special_prediction_history_v7.json'
+        raw_prediction_filename = os.path.join(RAW_PREDICTION_DIR, f'macau_special_prediction_v7_for_{prediction_period}.json')
         
         weights = {}
         try:
             with open(STRATEGY_FILE, 'r', encoding='utf-8') as f:
                 weights = json.load(f)
-            print(f"成功加载最优策略 '{STRATEGY_FILE}'。")
+            print(f"成功加载V7最优特码策略 '{STRATEGY_FILE}'。")
         except FileNotFoundError:
-            print(f"注意: 未找到最优策略文件 '{STRATEGY_FILE}'。将使用默认通用策略进行分析。")
-        except Exception as e:
-            print(f"错误: 加载策略文件失败: {e}。将使用默认通用策略。")
-
-        historical_data = load_data()
-        if historical_data:
-            print(f"为澳门第 {prediction_period} 期通用分析加载了 {len(historical_data)} 条历史数据。")
-            analysis_results_raw = advanced_analysis(historical_data, weights)
-            
-            if analysis_results_raw:
-                append_to_prediction_history(analysis_results_raw, prediction_period, PREDICTION_HISTORY_FILE)
-
-                try:
-                    with open(raw_prediction_filename, 'w', encoding='utf-8') as f:
-                        json.dump(analysis_results_raw, f, ensure_ascii=False, indent=2)
-                    print(f"原始通用预测存档已保存至 {raw_prediction_filename}")
-                except Exception as e:
-                    print(f"错误: 保存原始通用预测至 {raw_prediction_filename} 失败。 {e}")
-
-                results_formatted = {
-                    "分析期号": prediction_period,
-                    "热门生肖": [f"{z}" for z in analysis_results_raw["zodiacs"]],
-                    "热门号码": [f"号码 {n}" for n in analysis_results_raw["numbers"]],
-                    "'2中2' 组合": [f"组合 {c}" for c in analysis_results_raw["combos_2_in_2"]],
-                    "'3中3' 组合": [f"组合 {c}" for c in analysis_results_raw["combos_3_in_3"]]
-                }
-                try:
-                    with open(FORMATTED_OUTPUT_FILE, 'w', encoding='utf-8') as f:
-                        json.dump(results_formatted, f, ensure_ascii=False, indent=2)
-                    print(f"格式化通用分析结果已保存至 {FORMATTED_OUTPUT_FILE}")
-                except Exception as e:
-                    print(f"错误: 保存格式化通用结果至 {FORMATTED_OUTPUT_FILE} 失败。 {e}")
-        else:
-            print("没有足够的历史数据进行通用分析。")
-
-    elif prediction_type == 'special':
-        STRATEGY_FILE = 'best_special_strategy_macau.json'
-        FORMATTED_OUTPUT_FILE = 'macau_special_analysis_results.json'
-        PREDICTION_HISTORY_FILE = 'macau_special_prediction_history.json'
-        raw_prediction_filename = os.path.join(RAW_PREDICTION_DIR, f'macau_special_prediction_for_{prediction_period}.json')
-        
-        weights = {}
-        try:
-            with open(STRATEGY_FILE, 'r', encoding='utf-8') as f:
-                weights = json.load(f)
-            print(f"成功加载最优特码策略 '{STRATEGY_FILE}'。")
-        except FileNotFoundError:
-            print(f"注意: 未找到最优特码策略文件 '{STRATEGY_FILE}'。将使用默认特码策略进行分析。")
-        except Exception as e:
-            print(f"错误: 加载特码策略文件失败: {e}。将使用默认特码策略。")
+            print(f"注意: 未找到V7策略文件，将使用默认V7策略。")
 
         special_historical_data = load_special_number_data()
         if special_historical_data:
-            print(f"为澳门第 {prediction_period} 期特码分析加载了 {len(special_historical_data)} 条历史数据。")
+            print(f"为澳门第 {prediction_period} 期V7特码分析加载了 {len(special_historical_data)} 条历史数据。")
             analysis_results_raw = analyze_special_trend(special_historical_data, weights)
             
             if analysis_results_raw:
@@ -429,23 +449,25 @@ if __name__ == "__main__":
                 try:
                     with open(raw_prediction_filename, 'w', encoding='utf-8') as f:
                         json.dump(analysis_results_raw, f, ensure_ascii=False, indent=2)
-                    print(f"原始特码预测存档已保存至 {raw_prediction_filename}")
+                    print(f"V7原始特码预测存档已保存至 {raw_prediction_filename}")
                 except Exception as e:
-                    print(f"错误: 保存原始特码预测至 {raw_prediction_filename} 失败。 {e}")
+                    print(f"错误: {e}")
 
                 results_formatted = {
                     "分析期号": prediction_period,
-                    "特码推荐生肖": [f"{z[0]} (分数: {z[1]:.2f})" for z in analysis_results_raw["top_zodiacs"]],
+                    "V7特码推荐生肖(8个)": [f"{z[0]} (分数: {z[1]:.2f})" for z in analysis_results_raw["top_zodiacs"]],
                     "预测波色": analysis_results_raw["predicted_color"],
                     "预测尾数": analysis_results_raw["predicted_tail"],
+                    "预测五行": analysis_results_raw.get("predicted_element", "未知"),
                     "综合推荐号码": analysis_results_raw["recommended_numbers"],
-                    "特码分析说明": "基于生肖、波色、尾数综合分析，推荐分数最高的号码。"
+                    "防守信息": analysis_results_raw.get("defense_info", {}),
+                    "算法版本": "V7 - 8生肖智能覆盖"
                 }
                 try:
                     with open(FORMATTED_OUTPUT_FILE, 'w', encoding='utf-8') as f:
                         json.dump(results_formatted, f, ensure_ascii=False, indent=2)
-                    print(f"格式化特码分析结果已保存至 {FORMATTED_OUTPUT_FILE}")
+                    print(f"V7格式化特码分析结果已保存至 {FORMATTED_OUTPUT_FILE}")
                 except Exception as e:
-                    print(f"错误: 保存格式化特码结果至 {FORMATTED_OUTPUT_FILE} 失败。 {e}")
+                    print(f"错误: {e}")
         else:
-            print("没有足够的历史数据进行特码分析。")
+            print("没有足够的历史数据进行V7特码分析。")
